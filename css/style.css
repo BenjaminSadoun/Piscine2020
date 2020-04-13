@@ -1,0 +1,26 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background: white;
+   }
+
+.navbar {
+    background : linear-gradient(0.25turn, #f42e78, #c17afc);
+    }
+
+.nav-link {
+    margin-right: 1em;
+    }
+
+.nav-link, .navbar-brand {
+    color: #fff;
+    cursor: pointer;
+    }
+
+.navbar-brand:hover {
+    color: #000;
+     }
+
+.nav-link:hover {
+    color: #000;
+    }
