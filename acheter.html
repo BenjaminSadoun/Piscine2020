@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="UTF-8">
 <head>
-    <title> Achat </title>
+    <title> Ebay ECE </title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+
 </head>
 
 <body>
-    <nav class = "navbar navbar-expand-md">
-        <a class="navbar-brand" href="#">Logo</a>
-        
+    <div id="header">
+        <h1>Ebay ECE</h1>
+        <h2>La vente en ligne pour la communauté ECE Paris</h2>
+    </div>
+
+    <nav class="navbar navbar-expand-md bg-dark sticky-top navbar-dark">   
+        <a class="navbar-brand" href="logoeECE.svg">
+            <img src="img/logoeECE.png" alt="LogoeECE"  style="width:120px; height:120px; margin-bottom:-30px;margin-top:-30px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="catalogue.html">Catalogue</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Mon Compte</a></li>
+                    <!--<ul class="nav-item">
+                    <li><a class="nav-link" href="#">Ferraille ou trésor</a></li>
+                    <li><a class="nav-link" href="#">Bon pour le musée</a></li>
+                    <li><a class="nav-link" href="#">Accessoire VIP</a></li>
+                </ul>-->
+                
+                <li class="nav-item"><a class="nav-link" href="acheter.html">Acheter</a></li>
+                <li class="nav-item"><a class="nav-link" href="vendre.html">Vendre</a></li>
+                <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
             </ul>
         </div>
+    </nav> 
+    <div class="container features">
+        <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            <h3 class="feature-title">Inscription/Connexion</h3>
 
-    </nav>
+            <input type="text" class="form-control" placeholder="Votre nom :" nom="">
+            <input type="text" class="form-control" placeholder="Votre prénom :" prenom="">
+            <input type="text" class="form-control" placeholder="Votre adresse :" addresse="">
+            <input type="text" class="form-control" placeholder="Votre ville :" ville="">
+            <input type="text" class="form-control" placeholder="Votre code postal :" codePost="">
+            <input type="text" class="form-control" placeholder="Votre pays :" pays="">
+            <input type="text" class="form-control" placeholder="Votre numero de téléphone :" num="">
+            <input type="text" class="form-control" placeholder="Votre nom :" name="">
+            <h3>Informations bancaires</h3>
+            <input type="text" class="form-control" placeholder="Type de payement :" typePay="">
+            <input type="text" class="form-control" placeholder="Votre numéro de carte  :" numCarte="">
+            <input type="text" class="form-control" placeholder="Nom affiché sur votre carte  :" nomCarte="">
+            <input type="text" class="form-control" placeholder="Date d'expiration de la carte :" dateExpi="">
+            <input type="text" class="form-control" placeholder="Code de sécurité :" codeSecu="">
+
+            <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
+        </div>
+    </div>
 </body>
 </html>
