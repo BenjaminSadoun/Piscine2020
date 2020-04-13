@@ -18,7 +18,8 @@
         <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
     </div>
 
-    <nav class="navbar navbar-expand-md bg-dark sticky-top navbar-dark">
+    <?php include("navig.php"); ?>
+    <!-- <nav class="navbar navbar-expand-md bg-dark sticky-top navbar-dark">
         <a class="navbar-brand" href="logoeECE.svg">
             <img src="img/logoeECE.png" alt="LogoeECE"
                 style="width:120px; height:120px; margin-bottom:-30px;margin-top:-30px;">
@@ -35,7 +36,7 @@
                 <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
 
     <header class="page-header header container-fluid">
         <script type="text/javascript">
