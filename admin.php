@@ -27,9 +27,7 @@
             <h3 class="feature-title">Connexion</h3>
         </div>
         <form action="adminback.php" method="post">
-                <input type="text" class="form-control" placeholder="Votre nom :" name="nom">
-                <input type="text" class="form-control" placeholder="Votre prénom :" name="prenom">
-                <input type="text" class="form-control" placeholder="Votre email :" name="email">
+                <input type="text" class="form-control" placeholder="Votre login :" name="email">
                 <input type="text" class="form-control" placeholder="Votre mot de passe :" name="MdP">
                 <input type="submit" class="btn btn-secondary btn-block" type="submit" value="Envoyer" name="btnenvoyer">
             </form>
