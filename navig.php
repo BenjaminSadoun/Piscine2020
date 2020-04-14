@@ -7,11 +7,11 @@
     </button>
     <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-            <li class="nav-item"><a class="nav-link" href="catalogue.html">Catalogue</a></li>
-            <li class="nav-item"><a class="nav-link" href="acheter.html">Acheter</a></li>
-            <li class="nav-item"><a class="nav-link" href="vendre.html">Vendre</a></li>
-            <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalogue.php">Catalogue</a></li>
+            <li class="nav-item"><a class="nav-link" href="acheter.php">Acheter</a></li>
+            <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li>
+            <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>
         </ul>
     </div>
 </nav>

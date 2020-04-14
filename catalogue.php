@@ -13,8 +13,8 @@
 
 <body>
     <div id="header">
-        <h1 id = "h1">Ebay ECE</h1>
-        <h2 id = "h2">La vente en ligne pour la communauté ECE Paris</h2>
+        <h1 id="h1">Ebay ECE</h1>
+        <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
     </div>
 
     <?php include("navig.php"); ?>
@@ -22,28 +22,37 @@
     <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <h3 class="feature-title">Ferraille ou trésor</h3>
-
-                <img src="ferraille.jpg" class="img-fluid">
-
+                <h3 class="feature-title"><a href="ferailletresor.php">Ferraille ou trésor</a></h3>
+                <a href="ferailletresor.php">
+                    <img src="ferraille.jpg" class="img-fluid">
+                </a>
                 <p>
                     Ici vous pouvez trouver des objets de type ferraille ou trésor.
                 </p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <h3 class="feature-title">Bon pour le musée </h3>
-                <img src="musée.jpg" class="img-fluid">
+                <h3 class="feature-title"><a href="ferailletresor.php">Bon pour le musée</a></h3>
+                <a href="ferailletresor.php">
+                    <img src="musée.jpg" class="img-fluid">
+                </a>
                 <p>
                     Ici vous pouvez trouver des objets de type bon pour le musée.
                 </p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <h3 class="feature-title">Accessoire VIP</h3>
-                <img src="accessoire.jpg" class="img-fluid">
+                <h3 class="feature-title"><a href="ferailletresor.php">Accessoire VIP</a></h3>
+                <a href="ferailletresor.php">
+                    <img src="accessoire.jpg" class="img-fluid">
+                </a>
                 <p>
                     Ici vous pouvez trouver des objets de type accessoire VIP.
                 </p>
             </div>
+
+            <script>
+                $("a").css("color", "#293133");
+            
+            </script>
         </div>
     </div>
 
