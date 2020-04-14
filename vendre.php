@@ -19,6 +19,29 @@
     </div>
 
     <?php include("navig.php"); ?>
+    <div class="container features">
+        <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            <h3 class="feature-title">Inscription/Connexion</h3>
+
+            <input type="text" class="form-control" placeholder="Votre nom :" nom="">
+            <input type="text" class="form-control" placeholder="Votre prénom :" prenom="">
+            <input type="text" class="form-control" placeholder="Votre email :" email="">
+            <input type="text" class="form-control" placeholder="Votre mot de passe :" MdP="">
+           
+           
+            <h8>Choisissez une photo de profil(.jpg)</h8>
+            <input type="file" accept="image/png, image/jpeg"class="form-control" placeholder="Votre photo de profil :" PdP="">
+            <h8>Choisissez un fond d'écran(.jpg)</h8>
+            <input type="file" accept="image/png, image/jpeg"class="form-control" placeholder="Votre fond d'écran :" fondEcran="">
+
+
+
+            <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
+        </div>
+    </div>
+    
+    </body>
 
     <footer class="page-footer">
         <div class="container">
@@ -45,7 +68,7 @@
             <div class="footer-copyright text-center">&copy; 2019 Copyright | Droit d'auteur: ebay.ece.fr</div>
         </div>
     </footer>
-</body>
+
 
 
 </html>
