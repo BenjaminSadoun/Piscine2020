@@ -103,6 +103,13 @@ margin-right: 1em !important;
     line-height: 1.5;
 }
 
+div ul li ul div {
+    background : linear-gradient(0.75turn, #D58936, #69140E);
+}
+
+div ul li ul div a:hover{
+    background-color : brown;
+}
 /* .description button {
     border: 1px solid #6ab446;
     background-color: #6ab446;

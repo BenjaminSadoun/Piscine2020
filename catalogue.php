@@ -31,8 +31,8 @@
                 </p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <h3 class="feature-title"><a href="ferailletresor.php">Bon pour le musée</a></h3>
-                <a href="ferailletresor.php">
+                <h3 class="feature-title"><a href="musee.php">Bon pour le musée</a></h3>
+                <a href="musee.php">
                     <img src="musée.jpg" class="img-fluid">
                 </a>
                 <p>
@@ -40,8 +40,8 @@
                 </p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <h3 class="feature-title"><a href="ferailletresor.php">Accessoire VIP</a></h3>
-                <a href="ferailletresor.php">
+                <h3 class="feature-title"><a href="vip.php">Accessoire VIP</a></h3>
+                <a href="vip.php">
                     <img src="accessoire.jpg" class="img-fluid">
                 </a>
                 <p>
@@ -50,8 +50,7 @@
             </div>
 
             <script>
-                $("a").css("color", "#293133");
-            
+                $("div div div a").css("color", "#293133");
             </script>
         </div>
     </div>
