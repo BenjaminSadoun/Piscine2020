@@ -4,42 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Ebay ECE</title>
+    <title>Admin</title>
 </head>
 <body>
-
-
-    
-    <div id="header">
+<div id="header">
         <h1 id="h1">Ebay ECE</h1>
         <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
     </div>
 
     <?php include("navig.php"); ?>
-    <div class="container features">
-        <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12"></div>
-            <h3 class="feature-title">Inscription/Connexion</h3>
 
-            <input type="text" class="form-control" placeholder="Votre nom :" nom="">
-            <input type="text" class="form-control" placeholder="Votre prénom :" prenom="">
-            <input type="text" class="form-control" placeholder="Votre email :" email="">
-            <input type="text" class="form-control" placeholder="Votre mot de passe :" MdP="">
-           
-           
+
+    
         
 
 
-            <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
-            <h3 class="feature-title"><a href="adminCo.php">Go to admin now</a></h3>
-                <a href="adminCo.php">
-        </div>
-    </div>
-    </body>
-    <footer class="page-footer">
+</body>
+<footer class="page-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12">
@@ -64,5 +48,4 @@
             <div class="footer-copyright text-center">&copy; 2019 Copyright | Droit d'auteur: ebay.ece.fr</div>
         </div>
     </footer>
-
 </html>
