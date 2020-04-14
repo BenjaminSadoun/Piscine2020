@@ -19,9 +19,6 @@
     </div>
 
     <?php include("navig.php"); ?>
-    
-    <!-- <script>$("div").css("color", "red");</script> -->
-
 
     <header class="page-header header container-fluid">
         <script type="text/javascript">

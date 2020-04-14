@@ -18,7 +18,7 @@
     </div>
 
     <?php include("navig.php"); ?>
-    
+
     <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
