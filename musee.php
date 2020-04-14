@@ -10,6 +10,9 @@
     <title>Bon pour le musée</title>
 </head>
 <body>
+    <?php include("navig.php"); ?>
     
+    <?php include("footer.php"); ?>
+
 </body>
 </html>

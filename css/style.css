@@ -184,6 +184,13 @@ div ul li ul div a:hover{
     padding: 40px 0;
 }
 
+#sayHi{
+    color:#D98324;
+    padding : 20px;
+    text-align: center;
+    font-size: 3em;
+}
+
 @media (max-width: 575.98px) {
     .description {
         left: 0;
