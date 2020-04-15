@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 14 avr. 2020 à 10:24
+-- Généré le :  mer. 15 avr. 2020 à 08:42
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -42,7 +42,20 @@ CREATE TABLE IF NOT EXISTS `acheteur` (
   `pays` varchar(255) NOT NULL,
   `numeroTel` varchar(255) NOT NULL,
   PRIMARY KEY (`IDAch`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `acheteur`
+--
+
+INSERT INTO `acheteur` (`IDAch`, `nom`, `prenom`, `email`, `mdp`, `adresse1`, `adresse2`, `ville`, `codePostal`, `pays`, `numeroTel`) VALUES
+(1, 'Sadoun', 'Benjamin', 'benji.sadoun@gmail.com', 'benjamin', '4 rue de Chatillon', '2 rue de Chatillon', 'Paris', 75014, 'France', '0614094682'),
+(2, 'Partouche', 'Raphael', 'raphael.partouche@edu.ece.fr', 'raphael', '2 rue de l\'Abbe Carton ', '12 rue Yves Toudic', 'Paris', 75011, 'France', '0734627732'),
+(3, 'Benslimane', 'Youssef', 'youssef.benslimane@edu.ece.fr', 'youssef', '3 rue des Plantes', '', 'Paris', 75017, 'France', '0678334374'),
+(4, 'Chaouat', 'Celia', 'celia.chaouat@edu.ece.fr', 'celia', '121 rue Victor Hugo', '', 'Paris', 75016, 'France', '0692384467'),
+(5, 'Cohen', 'Salomé', 'salome.cohen@edu.ece.fr', 'salome', '39 Bouvelard Voltaire', '', 'Paris', 75011, 'France', '0687939472'),
+(6, 'Sadoun', 'Benjamin', 'benji.sadounnnnnnnnn@gmail.com', '', '4 rue de Chatillon', '2 rue de Chatillon', 'Paris', 75014, '', '0614094682'),
+(7, 'Sadounnnnnnnnn', 'Benjamin', 'bennnnnnnnnn@gmail.com', '', '4 rue de Chatillon', '2 rue de Chatillon', 'Paris', 75014, '', '0614094682');
 
 -- --------------------------------------------------------
 
@@ -58,7 +71,16 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `email` varchar(255) NOT NULL,
   `mdp` varchar(255) NOT NULL,
   PRIMARY KEY (`IDAdm`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`IDAdm`, `nom`, `prenom`, `email`, `mdp`) VALUES
+(1, 'Sadoun', 'Benjamin', 'benji.sadoun@gmail.com', 'benjamin'),
+(2, 'Chauvet', 'Emma', 'emmachauvet@hotmail.fr', 'emma'),
+(3, 'Ferret', 'Colin', 'colin.ferret@edu.ece.fr', 'colin');
 
 -- --------------------------------------------------------
 
@@ -75,8 +97,18 @@ CREATE TABLE IF NOT EXISTS `cartebancaire` (
   `nomCarte` varchar(255) NOT NULL,
   `dateExpi` date NOT NULL,
   `codeSecu` int(11) NOT NULL,
-  PRIMARY KEY (`IDCarte`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`IDCarte`) USING BTREE,
+  KEY `IDAch` (`IDAch`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `cartebancaire`
+--
+
+INSERT INTO `cartebancaire` (`IDCarte`, `IDAch`, `typePayement`, `numCarte`, `nomCarte`, `dateExpi`, `codeSecu`) VALUES
+(1, 1, 1, '10291293192301232', 'Carte professionelle', '2020-04-12', 3434),
+(2, 2, 1, '1234123423453456', 'Carte shopping', '2021-06-01', 4566),
+(3, 2, 2, '9999888877776666', 'carte commune', '2020-06-05', 3432);
 
 -- --------------------------------------------------------
 
@@ -98,8 +130,19 @@ CREATE TABLE IF NOT EXISTS `item` (
   `typeVente` int(11) NOT NULL,
   `dateDebut` date NOT NULL,
   `dateFin` date NOT NULL,
-  PRIMARY KEY (`numID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`numID`),
+  KEY `IDAch` (`IDAch`),
+  KEY `IDAdm` (`IDAdm`),
+  KEY `IDVend` (`IDVend`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `item`
+--
+
+INSERT INTO `item` (`numID`, `IDAch`, `IDAdm`, `IDVend`, `categorie`, `prixInitial`, `prixFinal`, `nom`, `description`, `typeVente`, `dateDebut`, `dateFin`) VALUES
+(1, 1, 1, 3, 1, 30, 30, 'ceinture', 'ceinture symptoche', 1, '2020-04-15', '2021-04-04'),
+(2, 2, 3, 1, 2, 15000, 15000, 'Rolex', 'Montre de mariage a vendre, c\'est la hess', 2, '2020-04-15', '2021-04-15');
 
 -- --------------------------------------------------------
 
@@ -113,8 +156,17 @@ CREATE TABLE IF NOT EXISTS `media` (
   `numID` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  PRIMARY KEY (`IDMedia`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`IDMedia`),
+  KEY `numID` (`numID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `media`
+--
+
+INSERT INTO `media` (`IDMedia`, `numID`, `nom`, `description`) VALUES
+(1, 1, 'Photo', 'Photo de la ceinture'),
+(2, 2, 'Video', 'Video de la montre');
 
 -- --------------------------------------------------------
 
@@ -124,14 +176,26 @@ CREATE TABLE IF NOT EXISTS `media` (
 
 DROP TABLE IF EXISTS `transaction`;
 CREATE TABLE IF NOT EXISTS `transaction` (
-  `IDTrans` int(11) NOT NULL,
+  `IDTrans` int(11) NOT NULL AUTO_INCREMENT,
   `IDAch` int(11) NOT NULL,
   `IDVend` int(11) NOT NULL,
   `numID` int(11) NOT NULL,
   `enchere` tinyint(1) NOT NULL,
   `meilleureOffre` tinyint(1) NOT NULL,
-  `achatImmediat` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `achatImmediat` tinyint(1) NOT NULL,
+  PRIMARY KEY (`IDTrans`),
+  KEY `IDAch` (`IDAch`),
+  KEY `IDVend` (`IDVend`),
+  KEY `numID` (`numID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `transaction`
+--
+
+INSERT INTO `transaction` (`IDTrans`, `IDAch`, `IDVend`, `numID`, `enchere`, `meilleureOffre`, `achatImmediat`) VALUES
+(1, 2, 3, 1, 0, 1, 0),
+(2, 2, 1, 2, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -149,8 +213,18 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   `mdp` varchar(255) NOT NULL,
   `fondEcran` varchar(255) NOT NULL,
   `photoProfil` varchar(255) NOT NULL,
-  PRIMARY KEY (`IDVend`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`IDVend`),
+  KEY `IDAdm` (`IDAdm`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `vendeur`
+--
+
+INSERT INTO `vendeur` (`IDVend`, `IDAdm`, `nom`, `prenom`, `email`, `mdp`, `fondEcran`, `photoProfil`) VALUES
+(1, 1, 'Itzkovitch', 'Jeremy', 'jeremy.itzkovitch@edu.ece.fr', 'jeremy', 'Paradis fiscal', 'photo1'),
+(2, 2, 'Zhang', 'Franck', 'franck.zhang@edu.ece.fr', 'franck', 'singapour', 'photo1'),
+(3, 1, 'Wang', 'David', 'david.wang@edu.ece.fr', 'david', 'cynthia', 'photoplage');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
