@@ -17,9 +17,9 @@
         <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
     </div>
 
-    <?php include("navig.php"); ?>
+    <?php include("config/navig.php"); ?>
 
-    <?php include("footer.php"); ?>
+    <?php include("config/footer.php"); ?>
 </body>
 
 </html>

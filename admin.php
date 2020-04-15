@@ -13,14 +13,12 @@
 
 <body>
 
-
-
     <div id="header">
         <h1 id="h1">Ebay ECE</h1>
         <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
     </div>
 
-    <?php include("navig.php"); ?>
+    <?php include("config/navig.php"); ?>
     <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
@@ -35,7 +33,7 @@
     </div>
 </body>
 
-<?php include("footer.php"); ?>
+<?php include("config/footer.php"); ?>
 
 </footer>
 

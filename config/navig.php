@@ -10,12 +10,11 @@
             
             <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a> </li>
 
-            <li class="nav-item"><a class="nav-link" href="connexion.php">Se connecter</a> </li>
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="catalogue.php" data-toggle="dropdown">Catalogue</a>
                 <ul class="navbar-nav">
                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="catalogue"> Toutes catégories</a>
                         <a class="dropdown-item" href="ferailletresor.php"> Feraille ou Trésor</a>
                         <a class="dropdown-item" href="musee.php"> Bon pour le musée</a>
                         <a class="dropdown-item" href="vip.php"> Accessoires VIP</a>
@@ -36,8 +35,7 @@
                 <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Vendre</a>
                 <ul class="navbar-nav">
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="vendre.php">Ajouter un objet</a>
-                        <a class="dropdown-item" href="vendre.php">Supprimer un objet</a>
+                        <a class="dropdown-item" href="vendre.php">Mes ventes</a>
                         <a class="dropdown-item" href="vendre.php">Voir mes meilleures offres</a>
 
                     </div>
@@ -55,6 +53,8 @@
                     </div>
                 </ul>
             </li>
+
+            <li class="nav-item"><a class="nav-link" href="connexion.php">Se connecter</a> </li>
 
 
             

@@ -33,7 +33,6 @@
         if ($db_found) {
             $sql = "SELECT * FROM acheteur";
 
-
             if ($_POST["button1"]) {
                 if ($email !== "") {
                     //on cherche l'acheteur avec le paramètre email
