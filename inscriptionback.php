@@ -89,8 +89,19 @@
             
 
             // create sql
+            if($_POST['inscription'] == 'acheteur')
+            {
             $sql = "INSERT INTO acheteur(nom,prenom,email,mdp,adresse1, adresse2,ville,codePostal,pays,numeroTel)
         VALUES('$nom','$prenom','$email','$mdp','$adresse1','$adresse2','$ville','$codePostal','$pays','$numeroTel')";
+            }
+            if($_POST['inscription'] == 'vendeur')
+            {
+            $sql = "INSERT INTO vendeur(IDAdm,nom,prenom,email,mdp,fondEcran, photoProfil)
+                     VALUES(0,'$nom','$prenom','$email','$mdp','','')";
+            }
+            else{
+                echo "Il y a une erreur !!!";
+            }
 
             // save to db and check
             if(mysqli_query($db_handle, $sql)){
