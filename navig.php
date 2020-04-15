@@ -7,7 +7,10 @@
     </button>
     <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
+            
             <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a> </li>
+
+            <li class="nav-item"><a class="nav-link" href="connexion.php">Se connecter</a> </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="catalogue.php" data-toggle="dropdown">Catalogue</a>
