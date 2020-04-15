@@ -8,6 +8,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title> Ebay ECE </title>
+    <form action="acheter-back.php" method="post">
 </head>
 
 <body>

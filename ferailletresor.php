@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,16 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Feraille ou Trésor</title>
 </head>
+
 <body>
+    <div id="header">
+        <h1 id="h1">Ebay ECE</h1>
+        <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
+    </div>
 
     <?php include("navig.php"); ?>
-    
+
     <?php include("footer.php"); ?>
 </body>
+
 </html>

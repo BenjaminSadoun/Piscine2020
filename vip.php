@@ -10,9 +10,12 @@
     <title>Accessoires VIP</title>
 </head>
 <body>
-    
+    <div id="header">
+        <h1 id="h1">Ebay ECE</h1>
+        <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
+    </div>
     <?php include("navig.php"); ?>
-    
+
     <?php include("footer.php"); ?>
 
 </body>
