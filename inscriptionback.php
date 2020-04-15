@@ -23,125 +23,87 @@
 
         <?php
 
-        $nom = isset($_POST["nom"]) ? $_POST["nom"] : "";
-        $prenom = isset($_POST["prenom"]) ? $_POST["prenom"] : "";
-        $email = isset($_POST["email"]) ? $_POST["email"] : "";
-        $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
-        $adresse1 = isset($_POST["adresse1"]) ? $_POST["adresse1"] : "";
-        $adresse2 = isset($_POST["adresse2"]) ? $_POST["adresse2"] : "";
-        $ville = isset($_POST["ville"]) ? $_POST["ville"] : "";
-        $codePost = isset($_POST["codePost"]) ? $_POST["codePost"] : "";
-        $pays = isset($_POST["pays"]) ? $_POST["pays"] : "";
-        $num = isset($_POST["num"]) ? $_POST["num"] : "";
+        // $nom = isset($_POST["nom"]) ? $_POST["nom"] : "";
+        // $prenom = isset($_POST["prenom"]) ? $_POST["prenom"] : "";
+        // $email = isset($_POST["email"]) ? $_POST["email"] : "";
+        // $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
+        // $adresse1 = isset($_POST["adresse1"]) ? $_POST["adresse1"] : "";
+        // $adresse2 = isset($_POST["adresse2"]) ? $_POST["adresse2"] : "";
+        // $ville = isset($_POST["ville"]) ? $_POST["ville"] : "";
+        // $codePost = isset($_POST["codePost"]) ? $_POST["codePost"] : "";
+        // $pays = isset($_POST["pays"]) ? $_POST["pays"] : "";
+        // $num = isset($_POST["num"]) ? $_POST["num"] : "";
 
+        $nom = $prenom = $email = $mdp = $adresse1 = $adresse2 = $ville = $codePostal = $pays = $numeroTel = '';
+        $errors = array('nom' => '', 'prenom' => '', 'email' => '', 'mdp' => '', 'adresse1' => '',
+                        'adresse2' => '', 'ville' => '', 'codePostal' => '', 'pays' => '', 'numeroTel' => '');
 
-        // $typePay = isset($_POST["typePay"]) ? $_POST["typePay"] : "";
-        // $numCarte = isset($_POST["numCarte"]) ? $_POST["numCarte"] : "";
-        // $nomCarte = isset($_POST["nomCarte"]) ? $_POST["nomCarte"] : "";
-        // $dateExpi = isset($_POST["dateExpi"]) ? $_POST["dateExpi"] : "";
-        // $codeSecu = isset($_POST["codeSecu"]) ? $_POST["codeSecu"] : "";
-        $database = "ebayece";
-
-        $db_handle = mysqli_connect('localhost', 'root', '');
-        $db_found = mysqli_select_db($db_handle, $database);
-
-        $connection = false;
-        $prenom = "";
-
-        if ($db_found) {
-            if ($_POST['inscription'] == 'acheteur') {
-                $sql = "SELECT * FROM acheteur";
-                if ($email !== "") {
-                    //on cherche l'acheteur avec le paramètre email
-                    $sql .= " WHERE email LIKE '%$email%'";
-
-                    /*if ($prenom !== "") {
-                        $sql .= " AND prenom LIKE '%$prenom%'";
-                    }*/
-                }
-
-                $result = mysqli_query($db_handle, $sql);
-                $data = mysqli_fetch_assoc($result);
-	            
-                //regarder s'il y a un résultat
-                if (mysqli_num_rows($result) !== 0) {
-                    //l'acheteur est déjà dans la BDD
-                    echo "Acheteur already exists.";
-                //regarder s'il y a un résultat
-                // if (mysqli_num_rows($result) !== 0) {
-                //     //l'acheteur est déjà dans la BDD
-                //     echo "Acheteur already exists.";
-                } 
-                else {
-                $sqlInsert = "INSERT INTO acheteur (nom, prenom, email, mdp, adresse1, 
-                adresse2, ville, codePostal, pays, numeroTel ) 
-                VALUES ('$nom', '$prenom', '$email', '$mdp', '$adresse1',
-                    '$adresse2', '$ville', '$codePost', '$pays', '$num' )";
-
-                    $result = mysqli_query($db_handle, $sqlInsert);
-                    echo "Successfully added." . "<br>";
-                    //  On réitère la recherche de l'acheteur
-                    $result = mysqli_query($db_handle, $sql);
-                    while ($data = mysqli_fetch_assoc($result)) {
-                        echo "Acheteur numéro " . $data['IDAch'] . "<br>";
-                        echo "Nom : " . $data['nom'] . "<br>";
-                        echo "Prenom : " . $data['prenom'] . "<br>";
-                        echo "Email: " . $data['email'] . "<br>";
-                        echo "Adresse 1 : " . $data['adresse1'] . "<br>";
-                        echo "Adresse 2 : " . $data['adresse2'] . "<br>";
-                        echo "Ville : " . $data['ville'] . "<br>";
-                        echo "Code postal : " . $data['codePostal'] . "<br>";
-                        echo "Pays : " . $data['pays'] . "<br>";
-                        echo "Numéro de téléphone : " . $data['numeroTel'] . "<br>";
-                        echo "<br>";
-                        }
-                    }
-            }
-
-            if ($_POST['inscription'] == 'vendeur') {
-                $sql = "SELECT * FROM vendeur";
-                if ($email !== "") {
-                    //on cherche l'acheteur avec le paramètre email
-                    $sql .= " WHERE email LIKE '%$email%'";
-
-                    /*if ($prenom !== "") {
-                        $sql .= " AND prenom LIKE '%$prenom%'";
-                    }*/
-                }
-
-                $result = mysqli_query($db_handle, $sql);
-                $data = mysqli_fetch_assoc($result);
-                    
-                    if (mysqli_num_rows($result) !== 0) {
-                        //l'acheteur est déjà dans la BDD
-                        echo "Vendeur already exists.";
-                    } 
-                    else {
-                        $sqlInsert = "INSERT INTO vendeur (nom, prenom, email, mdp) 
-                        VALUES ('$nom', '$prenom', '$email', '$mdp')";
-
-                        $result = mysqli_query($db_handle, $sqlInsert);
-                        echo "Successfully added." . "<br>";
-
-                        //  On réitère la recherche de l'acheteur
-                        $result = mysqli_query($db_handle, $sql);
-
-                        while ($data = mysqli_fetch_assoc($result)) {
-                            echo "Vendeur numéro " . $data['IDVend'] . "<br>";
-                            echo "Nom : " . $data['nom'] . "<br>";
-                            echo "Prenom : " . $data['prenom'] . "<br>";
-                            echo "Email: " . $data['email'] . "<br>";
-                            echo "Mdp: " . $data['mdp'] . "<br>";
-                            echo "<br>";
-                        }
-                    }
-            }
-        } else {
-            echo "Database not found";
+        $database = 'ebayece';
+        $db_handle = mysqli_connect('localhost', 'root', '', $database);
+        // check connection
+        if (!$db_handle) {
+            echo 'Connection error: ' . mysqli_connect_error();
         }
-        mysqli_close($db_handle);
-        ?>
-    </nav>
+        // $connection = false;
+        // $prenom = "";
+        
+        
+        if(isset($_POST['submit'])){
+		
+            // check email
+            if(empty($_POST['email'])){
+                $errors['email'] = 'An email is required';
+            } else{
+                $email = $_POST['email'];
+                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                    $errors['email'] = 'Email must be a valid email address';
+                }
+            }
+
+            // check prenom
+            if(empty($_POST['nom'])){
+                $errors['nom'] = 'Vous avez oublié votre nom';
+            } else{
+                $title = $_POST['nom'];
+            }
+
+            if(empty($_POST['prenom'])){
+                $errors['prenom'] = 'Vous avez oublié votre prénom';
+            } else{
+                $ingredients = $_POST['prenom'];
+            }
+            if(array_filter($errors)){
+                //echo 'errors in form';
+            } else {
+                // escape sql chars
+            $nom = mysqli_real_escape_string($db_handle, $_POST['nom']);
+            $prenom = mysqli_real_escape_string($db_handle, $_POST['prenom']);
+            $email = mysqli_real_escape_string($db_handle, $_POST['email']);
+            $mdp = mysqli_real_escape_string($db_handle, $_POST['mdp']);
+            $adresse1 = mysqli_real_escape_string($db_handle, $_POST['adresse1']);
+            $adresse2 = mysqli_real_escape_string($db_handle, $_POST['adresse2']);
+            $ville = mysqli_real_escape_string($db_handle, $_POST['ville']);
+            $codePostal = mysqli_real_escape_string($db_handle, $_POST['codePostal']);
+            $pays = mysqli_real_escape_string($db_handle, $_POST['pays']);
+            $numeroTel = mysqli_real_escape_string($db_handle, $_POST['numeroTel']);
+            
+
+            // create sql
+            $sql = "INSERT INTO acheteur(nom,prenom,email,mdp,adresse1, adresse2,ville,codePostal,pays,numeroTel)
+        VALUES('$nom','$prenom','$email','$mdp','$adresse1','$adresse2','$ville','$codePostal','$pays','$numeroTel')";
+
+            // save to db and check
+            if(mysqli_query($db_handle, $sql)){
+                // success
+                header('Location: index.php');
+            } else {
+                echo 'query error: '. mysqli_error($db_handle);
+            }
+
+        }  
+    }
+    
+         ?> </nav>
 
     <?php include("footer.php"); ?>
 
