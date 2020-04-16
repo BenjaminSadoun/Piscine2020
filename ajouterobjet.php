@@ -27,23 +27,37 @@ session_start();
 
             <h3 class="feature-title">Ajouter un objet</h3>
 
-            <input type="text" class="form-control" placeholder="Nom de l'objet" nom="nomitem">
-            <input type="text" class="form-control" placeholder="Description" nom="description">
-            <input type="file" id="fileItem" class="form-control" placeholder="Media" nom="nommedia"
+            <input type="text" class="form-control" placeholder="Nom de l'objet" name ="nom">
+            <input type="text" class="form-control" placeholder="Description" name ="description">
+            <input type="number" class="form-control" placeholder="Prix de l'Objet" name ="prixInitial">
+            <input type="file" id="fileItem" class="form-control" placeholder="Media" name ="nommedia"
             accept=".mp4,.jpg, .jpeg, .png, .gif, .avi" multiple>
 
             <br>
-            <h6>Catégories :</h6>
-            <input type="radio" id="fot" name="categorie" value="1" checked> 
-            <label for ="fot"> Ferraille ou Trésor </label>
-            <br>
-            <input type="radio" id="bplm" name="categorie" value="2"> 
-            <label for ="bplm">Bon pour le Musée</label>
-            <br>
-            <input type="radio" id="avip" name="categorie" value="3"> 
-            <label for ="avip">Accessoire VIP</label>
-            <br>
-            <input type="submit" class="btn btn-secondary btn-block" value="Ajouter" name="">
+
+            <h2>Catégories d'objet et type de vente</h2>
+            <table>
+                <tr>
+                <td> <h4> Categorie d'objet    </h4> </td>
+                <td><input type="radio" id="fot" name="categorie" value="fot" checked> 
+                <label for ="fot"> Ferraille ou Trésor </label></td>
+                <td><input type="radio" id="bplm" name="categorie" value="bplm"> 
+                <label for ="bplm">Bon pour le Musée</label></td>
+                <td><input type="radio" id="avip" name="categorie" value="avip">
+                <label for ="avip">Accessoire VIP</label></td>
+                </tr>  
+                <tr>
+                <td> <h4> Categorie de vente    </h4> </td>
+                <td><input type="radio" id="enchere" name="typeVente" value="enchere"> 
+                <label for ="enchere"> Enchere </label></td>
+                <td><input type="radio" id="meilleuroffre" name="typeVente" value="meilleuroffre"> 
+                <label for ="meilleuroffre"> Meilleur offre</label></td>
+                <td><input type="radio" id="achatimmediat" name="typeVente" value="achatimmediat" checked> 
+                <label for ="achatimmediat"> Achat immediat</label></td>
+                </tr>                
+            </table>
+            <input type="submit" class="btn btn-secondary btn-block" value="Ajouter" name="submit">
+            
         </form>
     </div>
 
