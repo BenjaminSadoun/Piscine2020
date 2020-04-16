@@ -23,24 +23,25 @@ session_start();
     <?php include("config/navig.php"); ?>
     <div class="container features">
         <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12"></div>
-            <h3 class="feature-title">Personnaliser votre compte</h3>
+            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            <form enctype="multipart/form-data" action="imagesVendeur.php" method="POST">
+                <h3 class="feature-title">Personnaliser votre compte</h3>
+                <br>
 
-           </br>
-            <h8>Choisissez une photo de profil(.jpg)</h8>
-            <input type="file" accept="image/png, image/jpeg"class="form-control" placeholder="Votre photo de profil :" PdP="">
-            <h8>Choisissez un fond d'écran(.jpg)</h8>
-            <input type="file" accept="image/png, image/jpeg"class="form-control" placeholder="Votre fond d'écran :" fondEcran="">
-
-
-
-            <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
+                <h8>Choisissez une photo de profil(.jpg)</h8>
+                <input type="file" accept="image/png, image/jpeg" class="form-control" 
+                        placeholder="Votre photo de profil :" name="photoProfil">
+                <h8>Choisissez un fond d'écran(.jpg)</h8>
+                <input type="file" accept="image/png, image/jpeg" class="form-control" 
+                        placeholder="Votre fond d'écran :" name="fondEcran">
+                <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="button1">
+            </form>
         </div>
     </div>
-    
-    </body>
 
-    <?php include("config/footer.php"); ?>
+</body>
+
+<?php include("config/footer.php"); ?>
 
 
 </html>
