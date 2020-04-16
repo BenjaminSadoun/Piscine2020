@@ -22,6 +22,42 @@ session_start();
 
     <?php include("config/navig.php"); ?>
 
+    <?php
+        $database = 'ebayece';
+        $db_handle = mysqli_connect('localhost', 'root', '', $database);
+
+        if(!$db_handle){
+            echo 'Erreur de connexion: ' . mysqli_connect_error();
+        }
+        $sql = 'SELECT prixInitial, nom, description FROM item WHERE typeVente = 2';
+        $res = mysqli_query($db_handle,$sql);
+        $infos = mysqli_fetch_all($res, MYSQLI_ASSOC);
+        mysqli_free_result($res);
+        mysqli_close($db_handle);
+        // print_r($categories);
+        ?>
+
+        <div class="container">
+            <div class="row">
+                <?php foreach($infos as $info){ ?>
+                    <div class="col s4 md3">
+                        <div class="card z-depth-0">
+                            <div class="card-content center">
+                                <h6><?php echo htmlspecialchars($info['nom']); ?></h6>
+                                <div><?php echo htmlspecialchars($info['description']); ?></div>
+                                <div><?php echo htmlspecialchars($info['prixInitial']); ?></div>
+                            </div>
+                            <div class="card-action right-align">
+                                <a class="brand-text" href="#">Plus d'informations</a>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php } ?>
+
+            </div>
+        </div>
+
     <?php include("config/footer.php"); ?>
 </body>
 
