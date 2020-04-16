@@ -1,4 +1,8 @@
 <?php
+session_start();
+?>
+
+<?php
     //recuperer les données venant de la page HTML
     //le parametre de $_POST = "name" de <input> de votre page HTML
     $nom = isset($_POST["nom"])? $_POST["nom"] : "";

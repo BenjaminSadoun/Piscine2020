@@ -1,3 +1,7 @@
+<?php
+ session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="UTF-8">
 
@@ -21,16 +25,21 @@
 
     <nav id="sayHi">
         <?php
-
         $identifiant = isset($_POST["identifiant"]) ? $_POST["identifiant"] : "";
         $MdP = isset($_POST["MdP"]) ? $_POST["MdP"] : "";
         $erreur = "";
         $database = "ebayece";
         $db_handle = mysqli_connect('localhost', 'root', '');
         $db_found = mysqli_select_db($db_handle, $database);
+        $_SESSION['nom'] = '';
+        $_SESSION['prenom'] ='';
+        $_SESSION['email'] = '';
+        $_SESSION['mdp'] = '';
+        $_SESSION['session'] = false;
 
         $connection = false;
         $prenom = "";
+        $checkbox = false;
 
         if ($db_found) {
             if ($_POST['connexion']=='acheteur') {
@@ -41,6 +50,13 @@
                     if ($identifiant == $data['email'] && $MdP == $data['mdp']) {
                         $connection = true;
                         $prenom = $data['prenom'];
+                        $_SESSION['session'] = false;
+                        // if($_POST['checkbox']=='resterconnecte')                  
+                        $_SESSION['nom'] = $data['nom'];
+                        $_SESSION['prenom'] = $data['prenom'];
+                        $_SESSION['email'] = $identifiant;
+                        $_SESSION['mdp'] = $MdP;
+
                     }
                 }
                 if ($connection == false) {
@@ -57,6 +73,9 @@
                     if ($identifiant == $data['email'] && $MdP == $data['mdp']) {
                         $connection = true;
                         $prenom = $data['prenom'];
+                        $_SESSION['prenom'] = $admin->prenom;
+                        $_SESSION['nom'] = $admin->nom;
+                        $_SESSION['email'] = $admin->email;
                     }
                 }
                 if ($connection == false) {

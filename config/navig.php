@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
-            
+
             <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a> </li>
 
             <li class="nav-item dropdown">
@@ -24,13 +24,33 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="acheter.php" data-toggle="dropdown">Acheter</a>
                 <ul class="navbar-nav">
-                    <div  class="dropdown-menu">
+                    <div class="dropdown-menu">
                         <a class="dropdown-item" href="acheter.php">Acheter-le maintenant</a>
                         <a class="dropdown-item" href="acheter.php">Meilleure offre</a>
                         <a class="dropdown-item" href="acheter.php">Enchères</a>
                     </div>
                 </ul>
             </li>
+
+            <?php
+             if (isset($_SESSION['email'])) {
+                if ($_SESSION['email'] != '' && $_SESSION['mdp'] != '') {
+            ?>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Mon Compte</a>
+                <ul class="navbar-nav">
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="vendre.php">Mes ventes</a>
+                        <a class="dropdown-item" href="vendre.php">Voir mes meilleures offres</a>
+
+                    </div>
+                </ul>
+            </li>
+            <?php
+                }
+            }
+            else{
+            ?>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Vendre</a>
                 <ul class="navbar-nav">
@@ -41,6 +61,9 @@
                     </div>
                 </ul>
             </li>
+            <?php
+            }
+            ?>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="admin.php" data-toggle="dropdown">Admin</a>
@@ -57,6 +80,9 @@
             <li class="nav-item"><a class="nav-link" href="connexion.php">Se connecter</a> </li>
 
 
-            
+
+
     </div>
 </nav>
+
+</div>

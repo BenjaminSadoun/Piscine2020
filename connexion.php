@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="UTF-8">
 
@@ -36,7 +39,9 @@
             <input type="text" class="form-control" placeholder="Votre email :" name="identifiant">
             <input type="text" class="form-control" placeholder="Votre mot de passe :" name="MdP">
             <input type="submit" class="btn btn-secondary btn-block" value="Se connecter" name="buttonconnexion">
-            <br><br><br><br>
+            <br>
+            <!-- r -->
+            <br><br><br>
         </form>
 
         <form action = "inscriptionback.php" method="POST">
