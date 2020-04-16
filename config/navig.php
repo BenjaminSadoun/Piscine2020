@@ -21,68 +21,89 @@
                     </div>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="acheter.php" data-toggle="dropdown">Acheter</a>
-                <ul class="navbar-nav">
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="acheter.php">Acheter-le maintenant</a>
-                        <a class="dropdown-item" href="acheter.php">Meilleure offre</a>
-                        <a class="dropdown-item" href="acheter.php">Enchères</a>
-                    </div>
-                </ul>
-            </li>
+
 
             <?php
-             if (isset($_SESSION['email'])) {
-                if ($_SESSION['email'] != '' && $_SESSION['mdp'] != '') {
-            ?>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Mon Compte</a>
-                <ul class="navbar-nav">
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="vendre.php">Mes ventes</a>
-                        <a class="dropdown-item" href="vendre.php">Voir mes meilleures offres</a>
+            if (isset($_SESSION['coAcheteur']) OR isset($_SESSION['coVendeur']) OR isset($_SESSION['coAdmin'])){
+                if (isset($_SESSION['coAcheteur'])) {
+                    if ($_SESSION['coAcheteur'] != '') {
+                        ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="acheter.php" data-toggle="dropdown">Acheter</a>
+                            <ul class="navbar-nav">
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="acheter.php">Acheter-le maintenant</a>
+                                    <a class="dropdown-item" href="acheter.php">Meilleure offre</a>
+                                    <a class="dropdown-item" href="acheter.php">Enchères</a>
+                                </div>
+                            </ul>
+                        </li>
 
-                    </div>
-                </ul>
-            </li>
-            <?php
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Mon Compte Acheteur</a>
+                            <ul class="navbar-nav">
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="vendre.php">Mes achats</a>
+                                    <a class="dropdown-item" href="vendre.php">Voir mes articles preferes</a>
+                                </div>
+                            </ul>
+                        </li>
+                        <?php
+                    }
                 }
-            }
-            else{
-            ?>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Vendre</a>
-                <ul class="navbar-nav">
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="vendre.php">Mes ventes</a>
-                        <a class="dropdown-item" href="vendre.php">Voir mes meilleures offres</a>
+                    
+                if (isset($_SESSION['coVendeur'])) {
+                    if ($_SESSION['coVendeur'] != '') {
+                        ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Vendre</a>
+                            <ul class="navbar-nav">
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="vendre.php">Items en ventes</a>
+                                    <a class="dropdown-item" href="admin.php">Ajouter un objet</a>
+                                    <a class="dropdown-item" href="vendre.php">Voir mes meilleures offres</a>
+            
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Mon Compte Vendeur</a>
+                            <ul class="navbar-nav">
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="vendre.php">Ventes recentes</a>
+                                </div>
+                            </ul>
+                        </li>
+                        <?php
+                    }
+                }
+                if (isset($_SESSION['coAdmin'])) {
+                    if ($_SESSION['coAdmin'] != '') {
+                         ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="admin.php" data-toggle="dropdown">Mon Compte Admin</a>
+                            <ul class="navbar-nav">
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="admin.php">Dernieres modifications</a>
+                                    <a class="dropdown-item" href="admin.php">Historique des transactions</a>
+                                </div>
+                            </ul>
+                        </li>
+                        <?php
+                    }
+                }
+                        ?>
 
-                    </div>
-                </ul>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="deconnexion.php">Se deconnecter</a> </li>
+
             <?php
             }
-            ?>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="admin.php" data-toggle="dropdown">Admin</a>
-                <ul class="navbar-nav">
-                    <div style="margin-left:-100px" class="dropdown-menu">
-                        <a class="dropdown-item" href="admin.php">Ajouter un objet</a>
-                        <a class="dropdown-item" href="admin.php">Ajouter un vendeur</a>
-                        <a class="dropdown-item" href="admin.php">Supprimer un objet</a>
-                        <a class="dropdown-item" href="admin.php">Supprimer un vendeur</a>
-                    </div>
-                </ul>
-            </li>
-
-            <li class="nav-item"><a class="nav-link" href="connexion.php">Se connecter</a> </li>
-
-
-
-
-    </div>
-</nav>
-
-</div>
+            else{
+                ?>
+                <li class="nav-item"><a class="nav-link" href="connexion.php">Se connecter</a> </li>
+                <?php
+                }
+                ?>
+        </div>
+    </nav>
