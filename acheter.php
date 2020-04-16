@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="UTF-8">
 <head>
@@ -17,7 +20,7 @@
         <h2 id = "h2">La vente en ligne pour la communauté ECE Paris</h2>
     </div>
 
-    <?php include("navig.php"); ?>
+    <?php include("config/navig.php"); ?>
 
     <div class="container features">
         <div class="row">
@@ -47,6 +50,6 @@
     </div>
 </body>
 
-<?php include("footer.php"); ?>
+<?php include("config/footer.php"); ?>
 
 </html>
