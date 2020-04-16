@@ -12,35 +12,20 @@ session_start();
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Ebay ECE</title>
 </head>
-
 <body>
-
     <div id="header">
         <h1 id="h1">Ebay ECE</h1>
         <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
     </div>
 
     <?php include("config/navig.php"); ?>
-    <div class="container features">
-        <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12"></div>
-            <h3 class="feature-title">Personnaliser votre compte</h3>
-
-           </br>
-            <h8>Choisissez une photo de profil(.jpg)</h8>
-            <input type="file" accept="image/png, image/jpeg"class="form-control" placeholder="Votre photo de profil :" PdP="">
-            <h8>Choisissez un fond d'écran(.jpg)</h8>
-            <input type="file" accept="image/png, image/jpeg"class="form-control" placeholder="Votre fond d'écran :" fondEcran="">
-
-
-
-            <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
-        </div>
-    </div>
-    
-    </body>
+<?php 
+    echo 'Votre compte : ';
+    ?>
 
     <?php include("config/footer.php"); ?>
 
+
+</body>
 
 </html>
