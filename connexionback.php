@@ -35,7 +35,10 @@
         $_SESSION['prenom'] ='';
         $_SESSION['email'] = '';
         $_SESSION['mdp'] = '';
-        $_SESSION['session'] = false;
+
+        $_SESSION['coAdmin'] = '';
+        $_SESSION['coAcheteur'] = '';
+        $_SESSION['coVendeur'] = '';
 
         $connection = false;
         $prenom = "";
@@ -50,12 +53,13 @@
                     if ($identifiant == $data['email'] && $MdP == $data['mdp']) {
                         $connection = true;
                         $prenom = $data['prenom'];
-                        $_SESSION['session'] = false;
+
                         // if($_POST['checkbox']=='resterconnecte')                  
                         $_SESSION['nom'] = $data['nom'];
                         $_SESSION['prenom'] = $data['prenom'];
                         $_SESSION['email'] = $identifiant;
                         $_SESSION['mdp'] = $MdP;
+                        $_SESSION['coAcheteur'] = 'connected';
 
                     }
                 }
@@ -63,6 +67,10 @@
                     echo "Il y a eu un problème de connexion à votre compte acheteur! Vérifiez votre identifiant et votre mot de passe";
                 } else {
                     echo "Bonjour " . $prenom . "!";
+                ?>
+                <br>
+                <a href="index.php">Retourner à l'accueil</a>
+                <?php
                 }
             } 
             if ($_POST['connexion']=='vendeur') {
@@ -73,15 +81,22 @@
                     if ($identifiant == $data['email'] && $MdP == $data['mdp']) {
                         $connection = true;
                         $prenom = $data['prenom'];
-                        $_SESSION['prenom'] = $admin->prenom;
-                        $_SESSION['nom'] = $admin->nom;
-                        $_SESSION['email'] = $admin->email;
+                        
+                        $_SESSION['nom'] = $data['nom'];
+                        $_SESSION['prenom'] = $data['prenom'];
+                        $_SESSION['email'] = $identifiant;
+                        $_SESSION['mdp'] = $MdP;
+                        $_SESSION['coVendeur'] = 'connected';
                     }
                 }
                 if ($connection == false) {
                     echo "Il y a eu un problème de connexion à votre compte vendeur! Vérifiez votre identifiant et votre mot de passe";
                 } else {
                     echo "Bonjour " . $prenom . "!";
+                ?>
+                <br>
+                <a href="index.php">Retourner à l'accueil</a>
+                <?php
                 }
             }
             if ($_POST['connexion']=='admin') {
@@ -92,12 +107,22 @@
                     if ($identifiant == $data['email'] && $MdP == $data['mdp']) {
                         $connection = true;
                         $prenom = $data['prenom'];
+
+                        $_SESSION['nom'] = $data['nom'];
+                        $_SESSION['prenom'] = $data['prenom'];
+                        $_SESSION['email'] = $identifiant;
+                        $_SESSION['mdp'] = $MdP;
+                        $_SESSION['coAdmin'] = 'connected';
                     }
                 }
                 if ($connection == false) {
                     echo "Il y a eu un problème de connexion à votre compte admin! Vérifiez votre identifiant et votre mot de passe";
                 } else {
                     echo "Bonjour " . $prenom . "!";
+                ?>
+                <br>
+                <a href="index.php">Retourner à l'accueil</a>
+                <?php
                 }
             } 
         } else {
