@@ -35,6 +35,7 @@
         $_SESSION['prenom'] ='';
         $_SESSION['email'] = '';
         $_SESSION['mdp'] = '';
+        $_SESSION['IDVend'] = 0;
 
         $_SESSION['coAdmin'] = '';
         $_SESSION['coAcheteur'] = '';
@@ -43,6 +44,7 @@
         $connection = false;
         $prenom = "";
         $checkbox = false;
+        $id = '';
 
         if ($db_found) {
             if ($_POST['connexion']=='acheteur') {
@@ -53,6 +55,7 @@
                     if ($identifiant == $data['email'] && $MdP == $data['mdp']) {
                         $connection = true;
                         $prenom = $data['prenom'];
+                        $id = $data['IDAch'];
 
                         // if($_POST['checkbox']=='resterconnecte')                  
                         $_SESSION['nom'] = $data['nom'];
@@ -87,6 +90,7 @@
                         $_SESSION['email'] = $identifiant;
                         $_SESSION['mdp'] = $MdP;
                         $_SESSION['coVendeur'] = 'connected';
+                        $_SESSION['IDVend'] = $data['IDVend'];
                     }
                 }
                 if ($connection == false) {
@@ -119,10 +123,10 @@
                     echo "Il y a eu un problème de connexion à votre compte admin! Vérifiez votre identifiant et votre mot de passe";
                 } else {
                     echo "Bonjour " . $prenom . "!";
-                ?>
-                <br>
-                <a href="index.php">Retourner à l'accueil</a>
-                <?php
+                    ?>
+                    <br>
+                    <a href="index.php">Retourner à l'accueil</a>
+                    <?php
                 }
             } 
         } else {

@@ -28,7 +28,7 @@ session_start();
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h3 class="feature-title"><a href="ferailletresor.php">Ferraille ou trésor</a></h3>
                 <a href="ferailletresor.php">
-                    <img src="ferraille.jpg" class="img-fluid">
+                    <img src="img/ferraille.jpg" class="img-fluid">
                 </a>
                 <p>
                     Ici vous pouvez trouver des objets de type ferraille ou trésor.
@@ -37,7 +37,7 @@ session_start();
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h3 class="feature-title"><a href="musee.php">Bon pour le musée</a></h3>
                 <a href="musee.php">
-                    <img src="musée.jpg" class="img-fluid">
+                    <img src="img/musée.jpg" class="img-fluid">
                 </a>
                 <p>
                     Ici vous pouvez trouver des objets de type bon pour le musée.
@@ -46,7 +46,7 @@ session_start();
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h3 class="feature-title"><a href="vip.php">Accessoire VIP</a></h3>
                 <a href="vip.php">
-                    <img src="accessoire.jpg" class="img-fluid">
+                    <img src="img/accessoire.jpg" class="img-fluid">
                 </a>
                 <p>
                     Ici vous pouvez trouver des objets de type accessoire VIP.

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md bg-dark sticky-top navbar-dark">
-    <a class="navbar-brand" href="logoeECE.svg">
+    <a class="navbar-brand" href="img/logoeECE.svg">
         <img src="img/logoeECE.png" alt="LogoeECE" style="width:120px; height:120px; margin-bottom:-30px;margin-top:-30px;">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -32,20 +32,19 @@
                             <a class="nav-link dropdown-toggle" href="acheter.php" data-toggle="dropdown">Acheter</a>
                             <ul class="navbar-nav">
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="acheter.php">Acheter-le maintenant</a>
-                                    <a class="dropdown-item" href="acheter.php">Meilleure offre</a>
-                                    <a class="dropdown-item" href="acheter.php">Enchères</a>
+                                    <a class="dropdown-item" href="catalogue.php">Acheter-le maintenant</a>
+                                    <a class="dropdown-item" href="catalogue.php">Meilleure offre</a>
+                                    <a class="dropdown-item" href="catalogue.php">Enchères</a>
                                 </div>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Mon Compte Acheteur</a>
+                            <a class="nav-link dropdown-toggle" href="compteacheteur.php" data-toggle="dropdown">Mon Compte Acheteur</a>
                             <ul class="navbar-nav">
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="vendre.php">Mes achats</a>
-                                    <a class="dropdown-item" href="vendre.php">Voir mes articles preferes</a>
-                                </div>
+                            <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="compteacheteur.php">Compte</a>
+                            </div>
                             </ul>
                         </li>
                         <?php
@@ -60,7 +59,7 @@
                             <ul class="navbar-nav">
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="vendre.php">Items en ventes</a>
-                                    <a class="dropdown-item" href="admin.php">Ajouter un objet</a>
+                                    <a class="dropdown-item" href="ajouterobjet.php">Ajouter un objet</a>
                                     <a class="dropdown-item" href="vendre.php">Voir mes meilleures offres</a>
             
                                 </div>
