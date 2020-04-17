@@ -24,6 +24,8 @@ session_start();
     <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            
+
             <form enctype="multipart/form-data" action="imagesVendeur.php" method="POST">
                 <h3 class="feature-title">Personnaliser votre compte</h3>
                 <br>
@@ -36,6 +38,27 @@ session_start();
                         placeholder="Votre fond d'écran :" name="fondEcran">
                 <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="button1">
             </form>
+
+        <?php
+            $database = 'ebayece';
+            $db_handle = mysqli_connect('localhost', 'root', '', $database);
+
+            $sql = "SELECT * FROM vendeur";
+            $result = mysqli_query($db_handle, $sql);
+            while ($rows = mysqli_fetch_array($result))
+            {
+                $photoProfil =$rows['photoProfil'];
+                $fondEcran =$rows['fondEcran'];
+        ?>
+
+            <div class="img-block">
+	        <img src="img/<?php echo $photoProfil; ?>" alt="" title="" class="img-responsive" />
+            <img src="img/<?php echo $fondEcran; ?>" alt="" title="" class="img-responsive" />
+	        </div>
+	
+	    <?php
+	        }
+	    ?>
         </div>
     </div>
 
