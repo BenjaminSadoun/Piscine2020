@@ -18,6 +18,7 @@ session_start();
     <div id="header">
         <h1 id = "h1">Ebay ECE</h1>
         <h2 id = "h2">La vente en ligne pour la communauté ECE Paris</h2>
+ 
     </div>
 
     <?php include("config/navig.php"); ?>
