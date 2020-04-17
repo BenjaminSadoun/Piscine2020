@@ -61,8 +61,11 @@ session_start();
 
             // create sql
            
-            $sql = "INSERT INTO vendeur (IDAdm,nom,prenom,email,mdp,photoProfil,fondEcran)
-            VALUES (1, '$nom','$prenom','$email','$mdp','$photoProfil', '$fondEcran')";
+            // $sql = "INSERT INTO vendeur (IDAdm,nom,prenom,email,mdp,photoProfil,fondEcran)
+            // VALUES (1, '$nom','$prenom','$email','$mdp','$photoProfil', '$fondEcran')";
+
+            $sql = "UPDATE vendeur SET photoProfil = '$photoProfil', fondEcran = '$fondEcran'
+             WHERE email = '$email' ";
             
             // save to db and check
             if(mysqli_query($db_handle, $sql)){
@@ -75,6 +78,7 @@ session_start();
 
             if (move_uploaded_file($_FILES['photoProfil']['tmp_name'], $target1)){
                 $msg = "L'image a été correctement chargée";
+                echo '<script>alert("Image correctement inseree")</script>';
             }else{
                 $msg = "Il y a eu un problème de chargement d'item";
             }
