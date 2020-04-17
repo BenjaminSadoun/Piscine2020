@@ -76,7 +76,7 @@ session_start();
                 $ingredients = $_POST['prenom'];
             }
             if(array_filter($errors)){
-                //echo 'errors in form';
+                echo 'errors in form';
             } else {
                 // escape sql chars
             $nom = mysqli_real_escape_string($db_handle, $_POST['nom']);
