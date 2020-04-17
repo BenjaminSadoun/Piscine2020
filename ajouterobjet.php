@@ -23,7 +23,7 @@ session_start();
     <?php include("config/navig.php"); ?>
 
     <div class="container features">
-        <form action="ajouterobjetback.php" method="POST">
+        <form enctype="multipart/form-data" action="ajouterobjetback.php" method="POST">
 
             <h3 class="feature-title">Ajouter un objet</h3>
 
