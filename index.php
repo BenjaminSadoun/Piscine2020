@@ -32,9 +32,6 @@ session_start();
         <div class="overlay">
             <div class="description">
                 <h1>Bienvenue chez eECE</h1>
-                <p>
-                
-                </p>
             </div>
         </div>
     </header>
