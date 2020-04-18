@@ -44,52 +44,49 @@ session_start();
             <h3><?php echo  $_SESSION['prenom'], ' ', $_SESSION['nom']; ?></h3>
             <div><?php echo $_SESSION['email']; ?></div>
 
-            
-
-
-                <div class="row">
-                    <div class="col-md-5">
 
 
 
-                        <div class="divider">
-                            <a href="catalogue.php" class="btn btn-outline-warning">Accéder à mes ventes</a>
-                        </div>
-                        <div class="divider">
-                            <a href="modifphoto.php" class="btn btn-outline-warning">Modifier mes photos</a>
-                        </div>
-                        <div class="divider">
-                            <a href="modifinfovendeur.php" class="btn btn-outline-warning">Modifier mes informations</a>
-                        </div>
-                        <div class="divider">
-                            <a href="connexion.php" class="btn btn-outline-warning">Se connecter avec un autre compte</a>
-                        </div>
+            <div class="row">
+                <div class="col-md-5">
 
+
+
+                    <div class="divider">
+                        <a href="catalogue.php" class="btn btn-outline-warning">Accéder à mes ventes</a>
                     </div>
-                    <div class="col-md-5">
+                    <div class="divider">
+                        <a href="modifphoto.php" class="btn btn-outline-warning">Modifier mes photos</a>
+                    </div>
+                    <div class="divider">
+                        <a href="modifinfovendeur.php" class="btn btn-outline-warning">Modifier mes informations</a>
+                    </div>
+                    <div class="divider">
+                        <a href="connexion.php" class="btn btn-outline-warning">Se connecter avec un autre compte</a>
+                    </div>
+
+                </div>
+                <div class="col-md-5">
                     <?php if ($_SESSION['photoProfil'] == '') {
-                echo "<div id='img_div'>";
-                echo "<img  class='img-fluid' src='img/account.png' ";
-                echo "</div>";
-            }
-            else{
-            ?>
-            <div><?php echo "<div id='img_div'>";
-                    echo "<img  class='img-fluid' src='img/" . $_SESSION['photoProfil'] . "' >";
-                    echo "</div>";
+                        echo "<div id='img_div'>";
+                        echo "<img  class='img-fluid' src='img/account.png' ";
+                        echo "</div>";
+                    } else {
+                    ?>
+                        <div><?php echo "<div id='img_div'>";
+                                echo "<img  class='img-fluid' src='img/" . $_SESSION['photoProfil'] . "' >";
+                                echo "</div>";
+            ?> <?php } ?>
 
 
-                    ?> <?php } ?>
-
-
-                    <!--   <p class="text small">
+                        <!--   <p class="text small">
                                                 <a> Charger une photo</a>
                                                 <div class="divider">
                                                         <input href = "#"  type="file">
                                                         </div> -->
 
 
-                                                        </div>
+                        </div>
                 </div>
             </div>
 
