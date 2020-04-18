@@ -25,8 +25,12 @@ session_start();
     <?php
         $database = 'ebayece';
         $db_handle = mysqli_connect('localhost', 'root', '', $database);
-        $bdd = new PDO('mysql:host=localhost', 'root', '');
-
+        try {
+        $bdd = new PDO('mysql:host=localhost; dbname=ebayece', 'root', '');
+        }
+        catch(exception $e) {
+        die('Erreur '.$e->getMessage());
+        }
 
         if(!$db_handle){
             echo 'Erreur de connexion: ' . mysqli_connect_error();
@@ -35,12 +39,12 @@ session_start();
         $res = mysqli_query($db_handle,$sql);
         $infos = mysqli_fetch_all($res, MYSQLI_ASSOC);
         mysqli_free_result($res);
-        mysqli_close($db_handle);
+        //mysqli_close($db_handle);
         ?>
 
         <div class="container features">
             <div class="row">
-                <?php foreach($infos as $info){ ?>
+                <?php foreach($infos as $info){?>
                     <div class="col-lg-4 col-md-4 col-sm-12">
                         <div class="card z-depth-0">
                             <div class="card-content center">
@@ -53,34 +57,39 @@ session_start();
                                         ?>
                                 </div>
                                 <div><?php echo htmlspecialchars($info['prixInitial']); ?></div>
-                                <div><button><a href="supprimerobjet.php?delete&numID=
-                                <?php echo $info['numID']; ?>" 
-                                type="button" class="#">Supprimer</a></button> </div>
+                                <div><button><a href="supprimerobjet.php?delete&numID=<?php echo $info['numID']; ?>"
+                                type="button" class="#" method="GET">Supprimer</a></button> 
+                                </div>
                                 <div class="card-action right-align">
                                 <a class="brand-text" href="#">Plus d'informations</a>
                                 </div>
-                            
-                            
-                            
-                            <?php if(isset($_GET['delete'])) 
+                                <?php 
+                                if(isset($_GET['delete'])){ 
                                 $numID = $_GET['numID'];
                                 $req = $bdd->prepare("DELETE FROM item where numID = :numID");
                                 $req->bindValue(':numID', $numID);
                                 $req->execute();
+                                echo '<script language="Javascript"> document.location.replace("index.php"); </script>';
                                 // header("Location : index.php");
+                                }
+                             
+                                // 
                             ?>
-                            
                             <!-- <form action = "supprimerobjet-back.php" method="POST">  
                                 <div><input type="submit" class="btn btn-secondary btn-block" 
                                             value="Supprimer l'item" name="supprimer" ></div>
                             </form> -->
                             </div>
-                            <?php } ?>
-                        </div>
+                           
+                        </div> 
+        
                     </div>
-                    <br><br><br>
+                    <!--<br><br><br>-->
+        <?php
+      // mysqli_close($db_handle);
+            } ?>
             </div>
-        </div>
+       </div> 
 
     <?php include("config/footer.php"); ?>
 </body>
