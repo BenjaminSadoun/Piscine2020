@@ -66,10 +66,10 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Mon Compte Vendeur</a>
+                            <a class="nav-link dropdown-toggle" href="comptevendeur.php" data-toggle="dropdown">Mon Compte Vendeur</a>
                             <ul class="navbar-nav">
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="vendre.php">Ventes recentes</a>
+                                    <a class="dropdown-item" href="comptevendeur.php">Ventes recentes</a>
                                 </div>
                             </ul>
                         </li>

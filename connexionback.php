@@ -89,8 +89,12 @@
                         $_SESSION['prenom'] = $data['prenom'];
                         $_SESSION['email'] = $identifiant;
                         $_SESSION['mdp'] = $MdP;
+
                         $_SESSION['coVendeur'] = 'connected';
                         $_SESSION['IDVend'] = $data['IDVend'];
+                        $_SESSION['photoProfil'] = $data['photoProfil'];
+                        $_SESSION['fondEcran'] = $data['fondEcran'];
+                        
                     }
                 }
                 if ($connection == false) {

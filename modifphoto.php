@@ -45,19 +45,17 @@ session_start();
 
             $sql = "SELECT * FROM vendeur";
             $result = mysqli_query($db_handle, $sql);
-            while ($rows = mysqli_fetch_array($result))
-            {
+            $rows = mysqli_fetch_array($result);
+            
                 $photoProfil =$rows['photoProfil'];
                 $fondEcran =$rows['fondEcran'];
+                $_SESSION['photoProfil']=$photoProfil;
+                $_SESSION['fondEcran']=$fondEcran;
         ?>
-
-            <!-- <div class="img-block">
-	        <img src="img/<?php echo $photoProfil; ?>" alt="" title="" class="img-responsive" />
-            <img src="img/<?php echo $fondEcran; ?>" alt="" title="" class="img-responsive" />
-	        </div> -->
+        
 	
 	    <?php
-	        }
+	        
 	    ?>
         </div>
     </div>
