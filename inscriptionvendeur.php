@@ -15,7 +15,6 @@ session_start();
 </head>
 
 <body>
-
     <div id="header">
         <h1 id="h1">Ebay ECE</h1>
         <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
@@ -23,21 +22,17 @@ session_start();
 
     <?php include("config/navig.php"); ?>
 
-    <header class="page-header header container-fluid">
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('.header').height($(window).height());
-            });
-        </script>
-        <div class="overlay">
-            <div class="description">
-                <h1>Bienvenue chez eECE</h1>
-            </div>
-        </div>
-    </header>
-
+    <form action = "inscriptionvendeur-back.php" method="POST">   
+        <input type="text" class="form-control" placeholder="Votre nom :" name="nom">
+        <input type="text" class="form-control" placeholder="Votre prénom :" name="prenom">
+        <input type="email" class="form-control" placeholder="Votre email :" name="email">
+        <input type="text" class="form-control" placeholder="Votre mot de passe :" name="mdp">
+        
+        <input type="submit" class="btn btn-secondary btn-block" value="S'inscrire" name="button3" >
+    </form> 
 
     <?php include("config/footer.php"); ?>
+
 
 </body>
 

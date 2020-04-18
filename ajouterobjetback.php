@@ -30,7 +30,7 @@ session_start();
         = $typeVente = $dateDebut = $dateFin= $nommedia = '';
         $errors = array('IDAch' => '', 'IDAdm' => '', 'IDVend' => '', 'categorie' => '', 'prixInitial' => '',
                         'prixFinal' => '', 'nom' => '', 'description' => '', 'typeVente' => '', 'dateDebut' => '',
-                        'dateFin' => '', 'nommedia' =>'');
+                        'dateFin' => '', 'nommedia' =>'', 'vignette' => '');
 
     
         $IDAch = 0;
@@ -84,127 +84,127 @@ session_start();
             if($_POST['categorie'] == 'fot' && $_POST['typeVente'] == 'enchere' )
             {
             $sql = "INSERT INTO item(IDAch,IDAdm,IDVend,categorie,prixInitial,
-                                prixFinal,nom,description,typeVente,dateDebut,dateFin)
+                                prixFinal,nom,description,typeVente,dateDebut,dateFin,vignette)
                     VALUES('$IDAch','$IDAdm','$IDVend',0,'$prixInitial',
-                            '$prixInitial','$nom','$description',0,'$dateDebut','$dateFin')";
+                            '$prixInitial','$nom','$description',0,'$dateDebut','$dateFin','$nommedia')";
 
-            $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
-            $res = mysqli_query($db_handle, $inter);
-            $data = mysqli_fetch_assoc($res);
-            $numID = $data['numID']+1;
-            $sql2 = "INSERT INTO media(numID,nom,description)
-                        VALUES('$numID','$nommedia','')";
+            // $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
+            // $res = mysqli_query($db_handle, $inter);
+            // $data = mysqli_fetch_assoc($res);
+            // $numID = $data['numID']+1;
+            // $sql2 = "INSERT INTO media(numID,nom,description)
+            //             VALUES('$numID','$nommedia','')";
             }
             else if($_POST['categorie'] == 'fot' && $_POST['typeVente'] == 'meilleuroffre' )
             {
             $sql = "INSERT INTO item(IDAch,IDAdm,IDVend,categorie,prixInitial,
-                                prixFinal,nom,description,typeVente,dateDebut,dateFin)
+                                prixFinal,nom,description,typeVente,dateDebut,dateFin,vignette)
                     VALUES('$IDAch','$IDAdm','$IDVend',0,'$prixInitial',
-                            '$prixInitial','$nom','$description',1,'$dateDebut','$dateFin')";
-            $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
-            $res = mysqli_query($db_handle, $inter);
-            $data = mysqli_fetch_assoc($res);
-            $numID = $data['numID']+1;
-            $sql2 = "INSERT INTO media(numID,nom,description)
-                        VALUES('$numID','$nommedia','')";
+                            '$prixInitial','$nom','$description',1,'$dateDebut','$dateFin','$nommedia')";
+            // $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
+            // $res = mysqli_query($db_handle, $inter);
+            // $data = mysqli_fetch_assoc($res);
+            // $numID = $data['numID']+1;
+            // $sql2 = "INSERT INTO media(numID,nom,description)
+            //             VALUES('$numID','$nommedia','')";
             }
             else if($_POST['categorie'] == 'fot' && $_POST['typeVente'] == 'achatimmediat' )
             {
             $sql = "INSERT INTO item(IDAch,IDAdm,IDVend,categorie,prixInitial,
-                                prixFinal,nom,description,typeVente,dateDebut,dateFin)
+                                prixFinal,nom,description,typeVente,dateDebut,dateFin,vignette)
                     VALUES('$IDAch','$IDAdm','$IDVend',0,'$prixInitial',
-                            '$prixInitial','$nom','$description',2,'$dateDebut','$dateFin')";
-            $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
-            $res = mysqli_query($db_handle, $inter);
-            $data = mysqli_fetch_assoc($res);
-            $numID = $data['numID']+1;
-            $sql2 = "INSERT INTO media(numID,nom,description)
-                        VALUES('$numID','$nommedia','')";
+                            '$prixInitial','$nom','$description',2,'$dateDebut','$dateFin','$nommedia')";
+            // $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
+            // $res = mysqli_query($db_handle, $inter);
+            // $data = mysqli_fetch_assoc($res);
+            // $numID = $data['numID']+1;
+            // $sql2 = "INSERT INTO media(numID,nom,description)
+            //             VALUES('$numID','$nommedia','')";
             }
             else if($_POST['categorie'] == 'bplm' && $_POST['typeVente'] == 'enchere' )
             {
             $sql = "INSERT INTO item(IDAch,IDAdm,IDVend,categorie,prixInitial,
-                                prixFinal,nom,description,typeVente,dateDebut,dateFin)
+                                prixFinal,nom,description,typeVente,dateDebut,dateFin,vignette)
                     VALUES('$IDAch','$IDAdm','$IDVend',1,'$prixInitial',
-                            '$prixInitial','$nom','$description',0,'$dateDebut','$dateFin')";
-            $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
-            $res = mysqli_query($db_handle, $inter);
-            $data = mysqli_fetch_assoc($res);
-            $numID = $data['numID']+1;
-            $sql2 = "INSERT INTO media(numID,nom,description)
-                        VALUES('$numID','$nommedia','')";
+                            '$prixInitial','$nom','$description',0,'$dateDebut','$dateFin','$nommedia')";
+            // $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
+            // $res = mysqli_query($db_handle, $inter);
+            // $data = mysqli_fetch_assoc($res);
+            // $numID = $data['numID']+1;
+            // $sql2 = "INSERT INTO media(numID,nom,description)
+            //             VALUES('$numID','$nommedia','')";
             }
             else if($_POST['categorie'] == 'bplm' && $_POST['typeVente'] == 'meilleuroffre' )
             {
             $sql = "INSERT INTO item(IDAch,IDAdm,IDVend,categorie,prixInitial,
-                                prixFinal,nom,description,typeVente,dateDebut,dateFin)
+                                prixFinal,nom,description,typeVente,dateDebut,dateFin,vignette)
                     VALUES('$IDAch','$IDAdm','$IDVend',1,'$prixInitial',
-                            '$prixInitial','$nom','$description',1,'$dateDebut','$dateFin')";
-            $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
-            $res = mysqli_query($db_handle, $inter);
-            $data = mysqli_fetch_assoc($res);
-            $numID = $data['numID']+1;
-            $sql2 = "INSERT INTO media(numID,nom,description)
-                        VALUES('$numID','$nommedia','')";
+                            '$prixInitial','$nom','$description',1,'$dateDebut','$dateFin','$nommedia')";
+            // $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
+            // $res = mysqli_query($db_handle, $inter);
+            // $data = mysqli_fetch_assoc($res);
+            // $numID = $data['numID']+1;
+            // $sql2 = "INSERT INTO media(numID,nom,description)
+            //             VALUES('$numID','$nommedia','')";
             }
             else if($_POST['categorie'] == 'bplm' && $_POST['typeVente'] == 'achatimmediat' )
             {
             $sql = "INSERT INTO item(IDAch,IDAdm,IDVend,categorie,prixInitial,
-                                prixFinal,nom,description,typeVente,dateDebut,dateFin)
+                                prixFinal,nom,description,typeVente,dateDebut,dateFin,vignette)
                     VALUES('$IDAch','$IDAdm','$IDVend',1,'$prixInitial',
-                            '$prixInitial','$nom','$description',2,'$dateDebut','$dateFin')";
-            $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
-            $res = mysqli_query($db_handle, $inter);
-            $data = mysqli_fetch_assoc($res);
-            $numID = $data['numID']+1;
-            $sql2 = "INSERT INTO media(numID,nom,description)
-                        VALUES('$numID','$nommedia','')";
+                            '$prixInitial','$nom','$description',2,'$dateDebut','$dateFin','$nommedia')";
+            // $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
+            // $res = mysqli_query($db_handle, $inter);
+            // $data = mysqli_fetch_assoc($res);
+            // $numID = $data['numID']+1;
+            // $sql2 = "INSERT INTO media(numID,nom,description)
+            //             VALUES('$numID','$nommedia','')";
             }
             else if($_POST['categorie'] == 'avip' && $_POST['typeVente'] == 'enchere' )
             {
             $sql = "INSERT INTO item(IDAch,IDAdm,IDVend,categorie,prixInitial,
-                                prixFinal,nom,description,typeVente,dateDebut,dateFin)
+                                prixFinal,nom,description,typeVente,dateDebut,dateFin,vignette)
                     VALUES('$IDAch','$IDAdm','$IDVend',2,'$prixInitial',
-                            '$prixInitial','$nom','$description',0,'$dateDebut','$dateFin')";
-            $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
-            $res = mysqli_query($db_handle, $inter);
-            $data = mysqli_fetch_assoc($res);
-            $numID = $data['numID']+1;
-            $sql2 = "INSERT INTO media(numID,nom,description)
-                        VALUES('$numID','$nommedia','')";
+                            '$prixInitial','$nom','$description',0,'$dateDebut','$dateFin','$nommedia')";
+            // $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
+            // $res = mysqli_query($db_handle, $inter);
+            // $data = mysqli_fetch_assoc($res);
+            // $numID = $data['numID']+1;
+            // $sql2 = "INSERT INTO media(numID,nom,description)
+            //             VALUES('$numID','$nommedia','')";
             }
             else if($_POST['categorie'] == 'avip' && $_POST['typeVente'] == 'meilleuroffre' )
             {
             $sql = "INSERT INTO item(IDAch,IDAdm,IDVend,categorie,prixInitial,
-                                prixFinal,nom,description,typeVente,dateDebut,dateFin)
+                                prixFinal,nom,description,typeVente,dateDebut,dateFin,vignette)
                     VALUES('$IDAch','$IDAdm','$IDVend',2,'$prixInitial',
-                            '$prixInitial','$nom','$description',1,'$dateDebut','$dateFin')";
-            $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
-            $res = mysqli_query($db_handle, $inter);
-            $data = mysqli_fetch_assoc($res);
-            $numID = $data['numID']+1;
-            $sql2 = "INSERT INTO media(numID,nom,description)
-                        VALUES('$numID','$nommedia','')";
+                            '$prixInitial','$nom','$description',1,'$dateDebut','$dateFin','$nommedia')";
+            // $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
+            // $res = mysqli_query($db_handle, $inter);
+            // $data = mysqli_fetch_assoc($res);
+            // $numID = $data['numID']+1;
+            // $sql2 = "INSERT INTO media(numID,nom,description)
+            //             VALUES('$numID','$nommedia','')";
             }
             else if($_POST['categorie'] == 'avip' && $_POST['typeVente'] == 'achatimmediat' )
             {
             $sql = "INSERT INTO item(IDAch,IDAdm,IDVend,categorie,prixInitial,
-                                prixFinal,nom,description,typeVente,dateDebut,dateFin)
+                                prixFinal,nom,description,typeVente,dateDebut,dateFin,vignette)
                     VALUES('$IDAch','$IDAdm','$IDVend',2,'$prixInitial',
-                            '$prixInitial','$nom','$description',2,'$dateDebut','$dateFin')";
-            $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
-            $res = mysqli_query($db_handle, $inter);
-            $data = mysqli_fetch_assoc($res);
-            $numID = $data['numID']+1;
-            $sql2 = "INSERT INTO media(numID,nom,description)
-                        VALUES('$numID','$nommedia','')";
+                            '$prixInitial','$nom','$description',2,'$dateDebut','$dateFin','$nommedia')";
+            // $inter = "SELECT numID FROM item ORDER BY numID DESC LIMIT 1";
+            // $res = mysqli_query($db_handle, $inter);
+            // $data = mysqli_fetch_assoc($res);
+            // $numID = $data['numID']+1;
+            // $sql2 = "INSERT INTO media(numID,nom,description)
+            //             VALUES('$numID','$nommedia','')";
             }
 
             else{
                 echo "Il y a une erreur !!!";
             }
 
-            if(mysqli_query($db_handle, $sql) AND mysqli_query($db_handle, $sql2)){
+            if(mysqli_query($db_handle, $sql)){ //AND mysqli_query($db_handle, $sql2)
                 // success
                 // header('Location: index.php');
             } else {

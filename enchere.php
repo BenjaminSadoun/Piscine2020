@@ -29,7 +29,7 @@ session_start();
         if(!$db_handle){
             echo 'Erreur de connexion: ' . mysqli_connect_error();
         }
-        $sql = 'SELECT prixInitial, nom, vignette, description FROM item WHERE categorie = 0';
+        $sql = 'SELECT prixInitial, nom, vignette, description FROM item WHERE typeVente = 0';
         $res = mysqli_query($db_handle,$sql);
         $infos = mysqli_fetch_all($res, MYSQLI_ASSOC);
         mysqli_free_result($res);

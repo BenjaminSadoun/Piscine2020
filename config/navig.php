@@ -32,9 +32,9 @@
                             <a class="nav-link dropdown-toggle" href="acheter.php" data-toggle="dropdown">Acheter</a>
                             <ul class="navbar-nav">
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="catalogue.php">Acheter-le maintenant</a>
-                                    <a class="dropdown-item" href="catalogue.php">Meilleure offre</a>
-                                    <a class="dropdown-item" href="catalogue.php">Enchères</a>
+                                    <a class="dropdown-item" href="achatimm.php">Acheter-le maintenant</a>
+                                    <a class="dropdown-item" href="meilleuroffre.php">Meilleure offre</a>
+                                    <a class="dropdown-item" href="enchere.php">Enchères</a>
                                 </div>
                             </ul>
                         </li>
