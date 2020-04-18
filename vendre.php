@@ -51,10 +51,10 @@ session_start();
                 $fondEcran =$rows['fondEcran'];
         ?>
 
-            <div class="img-block">
+            <!-- <div class="img-block">
 	        <img src="img/<?php echo $photoProfil; ?>" alt="" title="" class="img-responsive" />
             <img src="img/<?php echo $fondEcran; ?>" alt="" title="" class="img-responsive" />
-	        </div>
+	        </div> -->
 	
 	    <?php
 	        }

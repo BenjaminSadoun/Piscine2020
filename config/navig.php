@@ -79,12 +79,29 @@
                 if (isset($_SESSION['coAdmin'])) {
                     if ($_SESSION['coAdmin'] != '') {
                          ?>
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="admin.php" data-toggle="dropdown">Gestion des vendeurs</a>
+                            <ul class="navbar-nav">
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="ajoutervendeur.php">Ajouter un vendeur</a>
+                                    <a class="dropdown-item" href="supprimervendeur.php">Supprimer un vendeur</a>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="admin.php" data-toggle="dropdown">Gestions des items</a>
+                            <ul class="navbar-nav">
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="ajouterobjet.php">Ajouter un item</a>
+                                    <a class="dropdown-item" href="supprimerobjet.php">Supprimer un item</a>
+                                </div>
+                            </ul>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="admin.php" data-toggle="dropdown">Mon Compte Admin</a>
                             <ul class="navbar-nav">
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="admin.php">Dernieres modifications</a>
-                                    <a class="dropdown-item" href="admin.php">Historique des transactions</a>
+                                    <!-- <a class="dropdown-item" href="admin.php">Dernieres modifications</a> -->
                                 </div>
                             </ul>
                         </li>
