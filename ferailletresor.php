@@ -34,7 +34,7 @@ session_start();
     if (!$db_handle) {
         echo 'Erreur de connexion: ' . mysqli_connect_error();
     }
-    $sql = 'SELECT numID, prixInitial, nom, vignette, description FROM item WHERE categorie = 0';
+    $sql = 'SELECT numID, prixInitial, prixFinal, nom, vignette, description FROM item WHERE categorie = 0';
     $res = mysqli_query($db_handle, $sql);
     $infos = mysqli_fetch_all($res, MYSQLI_ASSOC);
     mysqli_free_result($res);
@@ -75,7 +75,7 @@ session_start();
     <?php
     if (isset($_GET["numID"])) {
         $numID = $_GET["numID"];
-        $req = $bdd->prepare("SELECT numID, prixInitial, nom, vignette, typeVente, description 
+        $req = $bdd->prepare("SELECT numID, prixInitial, prixFinal, nom, vignette, typeVente, IDVend, description 
                                 FROM item WHERE numID = :numID and categorie = 0");
         $req->bindValue(':numID', $numID);
         $req->execute();
@@ -84,10 +84,13 @@ session_start();
         // $_SESSION['objets']=$objets;
         $_SESSION['numID'] = $objets['numID'];
         $_SESSION['prixInitial'] = $objets['prixInitial'];
+        $_SESSION['prixFinal'] = $objets['prixFinal'];
         $_SESSION['nom'] = $objets['nom'];
         $_SESSION['vignette'] = $objets['vignette'];
         $_SESSION['description'] = $objets['description'];
         $_SESSION['typeVente'] = $objets['typeVente'];
+        $_SESSION['IDVend'] = $objets['IDVend'];
+
         echo '<script language="Javascript"> document.location.replace("infosobjet.php"); </script>';
     ?>
 

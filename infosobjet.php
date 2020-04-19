@@ -39,6 +39,8 @@ session_start();
                         </div>
                         <div><?php echo htmlspecialchars($_SESSION['prixInitial']); ?></div>
                         <?php $numID = $_SESSION['numID'];?>
+                        <?php $IDAch = $_SESSION['IDAch'];?>
+                        <?php $IDVend = $_SESSION['IDVend'];?>
                         <?php if ($_SESSION['typeVente'] == 0)
                         {
                         ?>
@@ -61,10 +63,28 @@ session_start();
                         <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
                              type="button" class="#" action="infosobjet.php" method="GET">Acheter cet objet maintenant</a></button>
                         </div>
+                        <?php 
+                            $database = 'ebayece';
+                            $db_handle = mysqli_connect('localhost', 'root', '', $database);
+                            if (!$db_handle) {
+                                echo 'Connection error: ' . mysqli_connect_error();
+                            }
+                            
+
+                        ?>
                         <?php } ?>
                         <?php
                             if (isset($_GET["numID"])) {
-                         echo '<script language="Javascript"> document.location.replace("achat.php"); </script>';
+                                $sql = "INSERT INTO transaction(IDAch,IDVend,numID, 
+                                                    enchere, meilleureOffre, achatImmediat)
+                            VALUES('$IDAch','$IDVend','$numID',0,0,1)";
+                            if(mysqli_query($db_handle, $sql)){ //AND mysqli_query($db_handle, $sql2)
+                                // success
+                                // header('Location: index.php');
+                            } else {
+                                echo 'query error: '. mysqli_error($db_handle);
+                            }
+                         echo '<script language="Javascript"> document.location.replace("panier.php"); </script>';
                             }
                             ?>
                     </div>
