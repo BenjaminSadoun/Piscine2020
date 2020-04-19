@@ -38,6 +38,7 @@ session_start();
         $database = "ebayece";
         $db_handle = mysqli_connect('localhost', 'root', '');
         $db_found = mysqli_select_db($db_handle, $database);
+        $numID = $_SESSION['numID'];
         $IDAch = $_SESSION['IDAch'];
         $prixInitial = $_SESSION['prixInitial'];
 
@@ -70,10 +71,10 @@ session_start();
                 $solde -= $prixInitial;
                 $sql2 = "UPDATE cartebancaire SET solde = '$solde' WHERE IDAch = $IDAch ";
                 $result = mysqli_query($db_handle, $sql2);
-
-
                 echo "Felicitations " . $prenom . "! Vous venez d'acheter un objet. Il vous reste " . $solde .
                 "euros sur votre compte";
+                $sql3 = "DELETE FROM item WHERE numID = $numID ";
+                $result = mysqli_query($db_handle, $sql3);
         ?>
                 <br>
                 <a href="index.php">Retourner à l'accueil</a>
