@@ -75,7 +75,7 @@ session_start();
     <?php
     if (isset($_GET["numID"])) {
         $numID = $_GET["numID"];
-        $req = $bdd->prepare("SELECT numID, prixInitial, nom, vignette, description 
+        $req = $bdd->prepare("SELECT numID, prixInitial, nom, vignette, typeVente, description 
                                 FROM item WHERE numID = :numID and categorie = 0");
         $req->bindValue(':numID', $numID);
         $req->execute();
@@ -87,6 +87,7 @@ session_start();
         $_SESSION['nom'] = $objets['nom'];
         $_SESSION['vignette'] = $objets['vignette'];
         $_SESSION['description'] = $objets['description'];
+        $_SESSION['typeVente'] = $objets['typeVente'];
         echo '<script language="Javascript"> document.location.replace("infosobjet.php"); </script>';
     ?>
 

@@ -63,6 +63,7 @@
                         $_SESSION['email'] = $identifiant;
                         $_SESSION['mdp'] = $MdP;
                         $_SESSION['coAcheteur'] = 'connected';
+                        $_SESSION['IDAch'] = $data['IDAch'];
 
                     }
                 }

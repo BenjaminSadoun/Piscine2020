@@ -38,6 +38,35 @@ session_start();
                                 ?>
                         </div>
                         <div><?php echo htmlspecialchars($_SESSION['prixInitial']); ?></div>
+                        <?php $numID = $_SESSION['numID'];?>
+                        <?php if ($_SESSION['typeVente'] == 0)
+                        {
+                        ?>
+                        <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
+                             type="button" class="#" action="infosobjet.php" method="GET">Encherir sur l'objet</a></button>
+                        </div>
+                        <?php } ?>
+
+                        <?php if ($_SESSION['typeVente'] == 1)
+                        {
+                        ?>
+                        <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
+                             type="button" class="#" action="infosobjet.php" method="GET">Proposer une offre</a></button>
+                        </div>
+                        <?php } ?>
+
+                        <?php if ($_SESSION['typeVente'] == 2)
+                        {
+                        ?>
+                        <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
+                             type="button" class="#" action="infosobjet.php" method="GET">Acheter cet objet maintenant</a></button>
+                        </div>
+                        <?php } ?>
+                        <?php
+                            if (isset($_GET["numID"])) {
+                         echo '<script language="Javascript"> document.location.replace("achat.php"); </script>';
+                            }
+                            ?>
                     </div>
                     <div class="card-action right-align"></div>
                 </div>
