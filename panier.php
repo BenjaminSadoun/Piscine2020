@@ -31,6 +31,7 @@ session_start();
     $res = mysqli_query($db_handle, $sql);
     $ids = mysqli_fetch_all($res, MYSQLI_ASSOC);
     mysqli_free_result($res);
+    $somme = 0;
 
     ?>
     <div class="container features">
@@ -52,12 +53,15 @@ session_start();
                                 <div><?php echo "<div id='img_div'>";
                                         echo "<img  class='img-fluid' src='img/imgitem/" . $item['vignette'] . "' >";
                                         echo "</div>";
+                                        $somme += $item['prixFinal'];
                                         ?>
                                 </div>
                                 <div><?php echo htmlspecialchars($item['prixFinal']); ?></div>
-                            <?php } ?>
-                            <div><button><a href="panier.php?delete&numID=<?php echo $numID; ?>" type="button" class="#" action="#" method="GET">Supprimer du panier</a></button>
+                                <div><button><a href="panier.php?delete&numID=<?php echo $numID; ?>"
+                             type="button" class="#" action="#" method="GET">Supprimer du panier</a></button>
                             </div>
+                            <?php } ?>
+                            
                         </div>
                     </div>
                 </div>
@@ -71,15 +75,20 @@ session_start();
                 mysqli_free_result($res3);
                 echo '<script language="Javascript"> document.location.replace("panier.php"); </script>';
                 ?>
-                <div><button><a href="panier.php?numID=<?php echo $numID; ?>" type="button" class="#" action="#" 
-                method="GET">Valider la commande</a></button>
+                
                 <?php
                 }
                 else{
                     echo "Votre panier est vide";
                 }
             }
+            $_SESSION['somme'] = $somme;
+            ?>
             
+            <div><button><a href="panier.php?numID=<?php echo $numID; ?>" type="button" class="#" action="#" 
+                method="GET">Passer à la commande</a></button>
+            <div><?php echo 'Total :' . $somme . '€' ?></div>
+            <?php
             if (isset($_GET["numID"])) {
                 echo '<script language="Javascript"> document.location.replace("achat.php"); </script>';
             }

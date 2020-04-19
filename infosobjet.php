@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 
 <head>
-       <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -24,8 +24,8 @@ session_start();
     <?php include("config/navig.php"); ?>
 
     <?php
-        ?>
-        <div class="container features">
+    ?>
+    <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="card z-depth-0">
@@ -38,55 +38,85 @@ session_start();
                                 ?>
                         </div>
                         <div><?php echo htmlspecialchars($_SESSION['prixInitial']); ?></div>
-                        <?php $numID = $_SESSION['numID'];?>
-                        <?php $IDAch = $_SESSION['IDAch'];?>
-                        <?php $IDVend = $_SESSION['IDVend'];?>
-                        <?php if ($_SESSION['typeVente'] == 0)
-                        {
+                        <?php $numID = $_SESSION['numID']; ?>
+                        <?php $prixInitial = $_SESSION['prixInitial']; ?>
+                        <?php $IDAch = $_SESSION['IDAch']; ?>
+                        <?php $IDVend = $_SESSION['IDVend']; ?>
+                        <?php if ($_SESSION['typeVente'] == 0) {
                         ?>
-                        <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
-                             type="button" class="#" action="infosobjet.php" method="GET">Encherir sur l'objet</a></button>
-                        </div>
+                            <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
+                             type="button" class="#" action="infosobjet.php" method="GET">
+                             Encherir sur l'objet</a></button>
+                            </div>
                         <?php } ?>
 
-                        <?php if ($_SESSION['typeVente'] == 1)
-                        {
+                        <?php if ($_SESSION['typeVente'] == 1) {
                         ?>
-                        <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
-                             type="button" class="#" action="infosobjet.php" method="GET">Proposer une offre</a></button>
-                        </div>
+                            <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>" 
+                            type="button" class="#" action="infosobjet.php" method="GET">
+                            Proposer une offre</a></button>
+                            </div>
                         <?php } ?>
 
-                        <?php if ($_SESSION['typeVente'] == 2)
-                        {
+                        <?php if ($_SESSION['typeVente'] == 2) {
                         ?>
-                        <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
-                             type="button" class="#" action="infosobjet.php" method="GET">Acheter cet objet maintenant</a></button>
-                        </div>
-                        <?php 
-                            $database = 'ebayece';
-                            $db_handle = mysqli_connect('localhost', 'root', '', $database);
-                            if (!$db_handle) {
-                                echo 'Connection error: ' . mysqli_connect_error();
-                            }
+                            <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
+                             type="button" class="#" action="infosobjet.php" method="GET">
+                             Acheter cet objet maintenant</a></button>
+                            </div>
+                            <?php
                             
-
-                        ?>
+                            ?>
                         <?php } ?>
+
                         <?php
-                            if (isset($_GET["numID"])) {
-                                $sql = "INSERT INTO transaction(IDAch,IDVend,numID, 
-                                                    enchere, meilleureOffre, achatImmediat)
-                            VALUES('$IDAch','$IDVend','$numID',0,0,1)";
-                            if(mysqli_query($db_handle, $sql)){ //AND mysqli_query($db_handle, $sql2)
+                        $database = 'ebayece';
+                        $db_handle = mysqli_connect('localhost', 'root', '', $database);
+                        if (!$db_handle) {
+                            echo 'Connection error: ' . mysqli_connect_error();
+                        }
+                        if (isset($_GET["numID"])) {
+                            if( $_SESSION['typeVente'] == 0){
+                            $sql = "INSERT INTO transaction(IDAch,IDVend,numID, 
+                                                    enchere, meilleureOffre, achatImmediat,prixPropose)
+                            VALUES('$IDAch','$IDVend','$numID',1,0,0,)";
+                            if (mysqli_query($db_handle, $sql)) { //AND mysqli_query($db_handle, $sql2)
                                 // success
                                 // header('Location: index.php');
                             } else {
-                                echo 'query error: '. mysqli_error($db_handle);
+                                echo 'query error: ' . mysqli_error($db_handle);
                             }
-                         echo '<script language="Javascript"> document.location.replace("panier.php"); </script>';
+                            echo '<script language="Javascript"> document.location.replace("panier.php"); </script>';
                             }
-                            ?>
+
+                            if( $_SESSION['typeVente'] == 1){
+                            $sql = "INSERT INTO transaction(IDAch,IDVend,numID, 
+                                                    enchere, meilleureOffre, achatImmediat,prixPropose)
+                            VALUES('$IDAch','$IDVend','$numID',0,1,0,$prixInitial)";
+                            if (mysqli_query($db_handle, $sql)) { //AND mysqli_query($db_handle, $sql2)
+                                // success
+                                // header('Location: index.php');
+                            } else {
+                                echo 'query error: ' . mysqli_error($db_handle);
+                            }
+                            echo '<script language="Javascript"> document.location.replace("negociation-ach.php"); </script>';
+                            }
+
+                            if( $_SESSION['typeVente'] == 2){
+                            $sql = "INSERT INTO transaction(IDAch,IDVend,numID, 
+                                                    enchere, meilleureOffre, achatImmediat,prixPropose)
+                            VALUES('$IDAch','$IDVend','$numID',0,0,1,0,$prixInitial)";
+                            if (mysqli_query($db_handle, $sql)) { //AND mysqli_query($db_handle, $sql2)
+                                // success
+                                // header('Location: index.php');
+                            } else {
+                                echo 'query error: ' . mysqli_error($db_handle);
+                            }
+                            echo '<script language="Javascript"> document.location.replace("panier.php"); </script>';
+                            }
+                }
+
+                        ?>
                     </div>
                     <div class="card-action right-align"></div>
                 </div>
@@ -94,7 +124,7 @@ session_start();
         </div>
 
         <?php
-                // }
+        // }
         ?>
     </div>
 
