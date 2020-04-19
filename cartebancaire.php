@@ -36,6 +36,8 @@ session_start();
         <input type="text" class="form-control" placeholder="Nom affiché sur la carte :" name="nomCarte">
         <input type="date" class="form-control" placeholder="Date d'expiration de la carte :" name="dateExpi">
         <input type="text" class="form-control" placeholder="Code de sécurité :" name="codeSecu">
+        <input type="text" class="form-control" placeholder="Solde de votre carte :" name="solde">
+
 
         <input type="submit" class="btn btn-secondary btn-block" value="S'inscrire" name="button4" >
     </form>

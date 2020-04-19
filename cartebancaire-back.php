@@ -23,8 +23,8 @@ session_start();
     <?php include("config/navig.php"); ?>
 
     <?php
-        $typePay = $numCarte = $nomCarte = $dateExpi = $codeCarte = '';
-        $errors = array('typePay' => '', 'numCarte' => '', 'nomCarte' => '', 'dateExpi' => '', 'codeSecu' => '');
+        $typePay = $numCarte = $nomCarte = $dateExpi = $codeCarte = $solde = '';
+        $errors = array('typePay' => '', 'numCarte' => '', 'nomCarte' => '', 'dateExpi' => '', 'codeSecu' => '', 'solde' => '');
 
         $database = 'ebayece';
         $db_handle = mysqli_connect('localhost', 'root', '', $database);
@@ -47,14 +47,15 @@ session_start();
              $nomCarte = mysqli_real_escape_string($db_handle, $_POST['nomCarte']);
              $dateExpi = mysqli_real_escape_string($db_handle, $_POST['dateExpi']);
              $codeSecu = mysqli_real_escape_string($db_handle, $_POST['codeSecu']);
-             
+             $solde = mysqli_real_escape_string($db_handle, $_POST['solde']);
+
             $sqlinsert = "SELECT IDAch FROM acheteur ORDER BY IDAch DESC LIMIT 1";
             $res = mysqli_query($db_handle, $sqlinsert);
             $data = mysqli_fetch_assoc($res);
             $IDAch = $data['IDAch'];
 
-            $sql = "INSERT INTO cartebancaire(IDAch,typePayement,numCarte, nomCarte, dateExpi, codeSecu)
-             VALUES('$IDAch','$typePay','$numCarte','$nomCarte','$dateExpi','$codeSecu')";
+            $sql = "INSERT INTO cartebancaire(IDAch,typePayement,numCarte, nomCarte, dateExpi, codeSecu, solde)
+             VALUES('$IDAch','$typePay','$numCarte','$nomCarte','$dateExpi','$codeSecu', '$solde')";
 
             echo '$sql';
              // save to db and check
