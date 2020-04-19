@@ -14,12 +14,7 @@ session_start();
 </head>
 
 <body>
-    <div id="header">
-        <h1 id="h1">Ebay ECE</h1>
-        <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
-    </div>
-
-    <?php include("config/navig.php"); ?>
+  
     <?php
     $database = 'ebayece';
     $db_handle = mysqli_connect('localhost', 'root', '', $database);
@@ -29,6 +24,19 @@ session_start();
     }
 
     ?>
+    <div class="overlay">
+
+        <?php echo "<div id='img_div'>";
+        echo "<img width='1579px'; height='750px'; src='img/" . $_SESSION['fondEcran'] . "'>";
+        echo "</div>"; ?>
+
+    </div>
+    <div id="header">
+        <h1>Ebay ECE</h1>
+        <h2>La vente en ligne pour la communauté ECE Paris</h2>
+    </div>
+
+    <?php include("config/navig.php"); ?>
 
 
 
@@ -36,65 +44,60 @@ session_start();
 
 
 
-        <!--      <h1>Mon compte</h1> -->
+        <div class="row">
 
+            <div class="col-sm-4">
 
-
-        <div class="navbar-content">
-            <h3><?php echo  $_SESSION['prenom'], ' ', $_SESSION['nom']; ?></h3>
-            <div><?php echo $_SESSION['email']; ?></div>
-
-
-
-
-            <div class="row">
-                <div class="col-md-5">
-
-
-
-                    <div class="divider">
-                        <a href="catalogue.php" class="btn btn-outline-warning">Accéder à mes ventes</a>
-                    </div>
-                    <div class="divider">
-                        <a href="modifphoto.php" class="btn btn-outline-warning">Modifier mes photos</a>
-                    </div>
-                    <div class="divider">
-                        <a href="modifinfovendeur.php" class="btn btn-outline-warning">Modifier mes informations</a>
-                    </div>
-                    <div class="divider">
-                        <a href="connexion.php" class="btn btn-outline-warning">Se connecter avec un autre compte</a>
-                    </div>
-
+                <div>
+                    <a href="catalogue.php"class="btn btn-secondary btn-block">Accéder à mes ventes</a>
                 </div>
-                <div class="col-md-5">
-                    <?php if ($_SESSION['photoProfil'] == '') {
-                        echo "<div id='img_div'>";
-                        echo "<img  class='img-fluid' src='img/account.png' ";
-                        echo "</div>";
-                    } else {
-                    ?>
-                        <div><?php echo "<div id='img_div'>";
-                                echo "<img  class='img-fluid' src='img/" . $_SESSION['photoProfil'] . "' >";
-                                echo "</div>";
-            ?> <?php } ?>
+                <div>
+                    <a href="modifphoto.php" class="btn btn-secondary btn-block">Modifier mes photos</a>
+                </div>
+                <div>
+                    <a href="modifinfovendeur.php" class="btn btn-secondary btn-block">Modifier mes informations</a>
+                </div>
+                <div>
+                    <a href="connexion.php" class="btn btn-secondary btn-block">Se connecter avec un autre compte</a>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <h3><?php echo  $_SESSION['prenom'], ' ', $_SESSION['nom']; ?></h3>
+                <div><?php echo $_SESSION['email']; ?></div>
+            </div>
 
 
-                        <!--   <p class="text small">
+
+            <div class="col-sm-4">
+                <?php if ($_SESSION['photoProfil'] == '') {
+                    echo "<div id='img_div'>";
+                    echo "<img  class='img-fluid' src='img/account.png' ";
+                    echo "</div>";
+                } else {
+                ?>
+                    <div><?php
+                            echo "<img  width='300px'; height='200'; src='img/" . $_SESSION['photoProfil'] . "' >";
+                            echo "</div>";
+                            ?> <?php } ?>
+
+
+                    <!--   <p class="text small">
                                                 <a> Charger une photo</a>
                                                 <div class="divider">
                                                         <input href = "#"  type="file">
                                                         </div> -->
 
 
-                        </div>
-                </div>
+                    </div>
             </div>
-
-
-
-
         </div>
+
+
+
+
     </div>
+
 
 
 

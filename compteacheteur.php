@@ -37,52 +37,46 @@ session_start();
     <div class="container features">
 
 
-
-        <!--      <h1>Mon compte</h1> -->
-
-
-
-        <div class="navbar-content">
-            <h3><?php echo  $_SESSION['prenom'], ' ', $_SESSION['nom']; ?></h3>
-            <div><?php echo $_SESSION['email']; ?></div>
-
-
-            <div class="row">
-                <div class="col-md-5">
-
-
-
-                    <div class="divider">
-                        <a href="catalogue.php" class="btn btn-outline-warning">Accéder à mon panier</a>
-                    </div>
-                    <div class="divider">
-                        <a href="inscriptionacheteur.php" class="btn btn-outline-warning">Ajouter une carte de paiement</a>
-                    </div>
-                    <div class="divider">
-                        <a href="inscriptionacheteur.php" class="btn btn-outline-warning">Modifier mes informations</a>
-                    </div>
-                    <div class="divider">
-                        <a href="connexion.php" class="btn btn-outline-warning">Se connecter avec un autre compte</a>
-                    </div>
-
-                </div>
-                <div class="col-md-5">
-                    <img src="img/account" height=200 weight=200>
-                    <!--   <p class="text small">
-                                                        <a> Charger une photo</a>
-                                                        <div class="divider">
-                                                                <input href = "#"  type="file">
-                                                                </div> -->
-
-
-
-                </div>
+        <div class="row">
+        <div class="col-sm-4">
+                <h3><?php echo  $_SESSION['prenom'], ' ', $_SESSION['nom']; ?></h3>
+                <div><?php echo $_SESSION['email']; ?></div>
+                <div><?php echo $_SESSION['pays']; ?></div>
+                <div><?php echo $_SESSION['ville']; ?></div>
+                <div><?php echo $_SESSION['codePostal']; ?></div>
+                <div><?php echo $_SESSION['adresse1']; ?></div>
+                <div><?php echo $_SESSION['numeroTel']; ?></div>
             </div>
 
+            <div class="col-sm-4" style="margin-top:-16px;margin-left:-120px;">
+
+                <div class ="row">
+                    <a href="catalogue.php" class="btn btn-secondary btn-block">Accéder à mon panier</a>
+                </div>
+                <div  class ="row">
+                    <a href="infosbancaires.php" class="btn btn-secondary btn-block">Accéder à mes informations bancaires</a>
+                </div>
+                <div  class ="row">
+                    <a href="inscriptionacheteur.php" class="btn btn-secondary btn-block">Modifier mes informations</a>
+                </div>
+                <div  class ="row">
+                    <a href="connexion.php" class="btn btn-secondary btn-block">Se connecter avec un autre compte</a>
+                </div>
+
+            </div>
+          
+            <div class="col-sm-4" style="margin-left:60px" > 
+                <img src="img/account"  style="height: 200px;" >
 
 
 
+            </div>
         </div>
+
+
+
+
+    </div>
     </div>
 
     <?php include("config/footer.php"); ?>

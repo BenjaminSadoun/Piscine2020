@@ -23,18 +23,10 @@ session_start();
 
     <?php include("config/navig.php"); ?>
 
-    <header class="page-header header container-fluid">
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('.header').height($(window).height());
-            });
-        </script>
-        <div class="overlay">
-            <div class="description">
-                <h1>Bienvenue chez eECE</h1>
-            </div>
+   
+        <div class="container features">
+        Activité consistant dans l'achat, la vente, l'échange de marchandises, de denrées, de valeurs, dans la vente de services ; métier de celui qui achète des objets pour les revendre : Faire le commerce de gros, de détail. Marine, navire, port de commerce.    
         </div>
-    </header>
 
 
     <?php include("config/footer.php"); ?>

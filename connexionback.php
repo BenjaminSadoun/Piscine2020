@@ -63,7 +63,12 @@
                         $_SESSION['email'] = $identifiant;
                         $_SESSION['mdp'] = $MdP;
                         $_SESSION['coAcheteur'] = 'connected';
+                        $_SESSION['ville'] = $data['ville'];
+                        $_SESSION['pays'] = $data['pays'];
                         $_SESSION['IDAch'] = $data['IDAch'];
+                        $_SESSION['codePostal'] = $data['codePostal'];
+                        $_SESSION['adresse1'] = $data['adresse1'];
+                        $_SESSION['numeroTel'] = $data['numeroTel'];
 
                     }
                 }
