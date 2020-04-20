@@ -79,6 +79,7 @@ session_start();
             $nom = mysqli_real_escape_string($db_handle, $_POST['nom']);
             $description = mysqli_real_escape_string($db_handle, $_POST['description']);
             $typeVente = mysqli_real_escape_string($db_handle, $_POST['typeVente']);
+            $dateFin = mysqli_real_escape_string($db_handle, $_POST['dateFin']);
 
             // create sql
             if($_POST['categorie'] == 'fot' && $_POST['typeVente'] == 'enchere' )

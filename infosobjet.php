@@ -49,12 +49,12 @@ session_start();
                                 if (!$db_handle) {
                                     echo 'Connection error: ' . mysqli_connect_error();
                                 }
-                            $req = "SELECT typeVente FROM item WHERE numID = $numID ";
-                            $result = mysqli_query($db_handle, $req);
-                            $type = mysqli_fetch_assoc($result);
-                            mysqli_free_result($result);
-                            $typeVente = $type['typeVente'];
-                          $_SESSION['typeVente']=$typeVente;
+                        //     $req = "SELECT typeVente FROM item WHERE numID = $numID ";
+                        //     $result = mysqli_query($db_handle, $req);
+                        //     $type = mysqli_fetch_assoc($result);
+                        //     mysqli_free_result($result);
+                        //     $typeVente = $type['typeVente'];
+                        //   $_SESSION['typeVente']=$typeVente;
                         ?>
                         <?php if ($_SESSION['typeVente'] == 0) {
                         ?>
@@ -100,7 +100,7 @@ session_start();
                             } else {
                                 echo 'query error: ' . mysqli_error($db_handle);
                             }
-                            echo '<script language="Javascript"> document.location.replace("panier.php"); </script>';
+                            echo '<script language="Javascript"> document.location.replace("enchere-ach.php"); </script>';
                             }
 
                             if( $_SESSION['typeVente'] == 1){
