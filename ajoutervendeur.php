@@ -22,6 +22,7 @@ session_start();
 
     <?php include("config/navig.php"); ?>
 
+    <div class = "container features">
     <form action = "inscriptionvendeur-back.php" method="POST">   
         <input type="text" class="form-control" placeholder="Son nom :" name="nom">
         <input type="text" class="form-control" placeholder="Son prénom :" name="prenom">
@@ -30,6 +31,7 @@ session_start();
         
         <input type="submit" class="btn btn-secondary btn-block" value="Ajouter un vendeur à la base de donnée" name="button3" >
     </form> 
+    </div>
 
     <?php include("config/footer.php"); ?>
 

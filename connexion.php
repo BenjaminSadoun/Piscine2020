@@ -40,8 +40,7 @@ session_start();
             <input type="text" class="form-control" placeholder="Votre mot de passe :" name="MdP">
             <input type="submit" class="btn btn-secondary btn-block" value="Se connecter" name="buttonconnexion">
             <br>
-            <input type="checkbox" id="resterconnecte" name="checkbox" value="resterconnecte">
-            <label for="resterconnecte">Cochez le bouton pour rester connecté à la prochaine connection</label>
+            
             <br><br><br>
         </form>
 

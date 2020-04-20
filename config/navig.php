@@ -59,7 +59,6 @@
                             <a class="nav-link dropdown-toggle" href="vendre.php" data-toggle="dropdown">Vendre</a>
                             <ul class="navbar-nav">
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="vendre.php">Items en ventes</a>
                                     <a class="dropdown-item" href="ajouterobjet.php">Ajouter un objet</a>
                                     <a class="dropdown-item" href="negociation-vend.php">Voir mes meilleures offres</a>
             
@@ -70,7 +69,7 @@
                             <a class="nav-link dropdown-toggle" href="comptevendeur.php" data-toggle="dropdown">Mon Compte Vendeur</a>
                             <ul class="navbar-nav">
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="comptevendeur.php">Ventes récentes</a>
+                                    <a class="dropdown-item" href="comptevendeur.php">Mes informations</a>
                                 </div>
                             </ul>
                         </li>

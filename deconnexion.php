@@ -25,10 +25,11 @@ session_destroy();
     </div>
 
     <?php include("config/navig.php"); ?>
-
+    <div class="container features">
     <h3> Vous êtes bien déconnecté. </h3>
     <br>
     <a href="index.php" class="btn btn-secondary ">Retourner à l'accueil</a>
+    </div>
 
     <?php include("config/footer.php"); ?>
     

@@ -28,8 +28,7 @@ session_start();
     <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="card z-depth-0">
-                    <div class="card-content center">
+                
                         <h6><?php echo htmlspecialchars($_SESSION['nom']); ?></h6>
                         <div><?php echo htmlspecialchars($_SESSION['description']); ?></div>
                         <div><?php echo "<div id='img_div'>";
@@ -67,41 +66,35 @@ session_start();
                         ?>
                         <?php if ($_SESSION['typeVente'] == 0) {
                         
-                        if(!isset($_SESSION['IDAch']) && !isset($_SESSION['IDVend']))
-                        {
-                        ?>
-                            
+                        ?> 
                             <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
                              type="button" class="#" action="infosobjet.php" method="GET">
                              Encherir sur l'objet</a></button>
                             </div>
                             <?php
                             } 
-                         } ?>
+                          ?>
 
                         <?php if ($_SESSION['typeVente'] == 1) {
-                             if(!isset($_SESSION['IDAch']) && !isset($_SESSION['IDVend']))
-                             {
+                            
                         ?>
                             <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>" 
                             type="button" class="#" action="infosobjet.php" method="GET">
                             Proposer une offre</a></button>
                             </div>
                             <?php
-                        } 
-                             } ?>
+                        }
+                            ?>
 
                         <?php if ($_SESSION['typeVente'] == 2) {
-                             if(!isset($_SESSION['IDAch']) && !isset($_SESSION['IDVend']))
-                             {
+                             
                         ?>
                             <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
                              type="button" class="#" action="infosobjet.php" method="GET">
                              Acheter cet objet maintenant</a></button>
                             </div>
                             <?php
-                             } 
-                            
+                             
                          } ?>
 
                         <?php
@@ -153,9 +146,9 @@ session_start();
                 }
 
                         ?>
-                    </div>
+                    
                     <div class="card-action right-align"></div>
-                </div>
+
             </div>
         </div>
 

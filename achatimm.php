@@ -46,24 +46,18 @@ session_start();
         <div class="row">
             <?php foreach ($infos as $info) { ?>
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="card z-depth-0">
-                        <div class="card-content center">
-                            <h6><?php echo htmlspecialchars($info['nom']); ?></h6>
-                            <div><?php echo htmlspecialchars($info['description']); ?></div>
-                            <div><?php echo "<div id='img_div'>";
-                                    echo "<img  class='img-fluid' src='img/imgitem/" . $info['vignette'] . "' >";
+                <p style="text-align:center;font-size:20px;" ><?php echo htmlspecialchars($info['nom']); ?></p>
+                <p style="text-align:center;" > <?php echo htmlspecialchars($info['description']); ?></p>
+                            <?php echo "<div id='img_div'>";
+                                    echo "<img width=400px; height=300px class='img-fluid' src='img/imgitem/" . $info['vignette'] . "' >";
                                     echo "</div>";
                                     ?>
-                            </div>
-                            <div><?php echo htmlspecialchars($info['prixInitial']); ?></div>
-                        
-                            <div class="card-action right-align"></div>
 
-                            <div><button><a href="achatimm.php?numID=<?php echo $info['numID']; ?>"
-                             type="button" class="#" action="infosobjet.php" method="GET">Plus d'informations</a></button>
-                            </div>
-                        </div>
-                    </div>
+                           <p style="text-align:center;font-size:20px;" ><?php echo htmlspecialchars($info['prixInitial']); ?> €<p>
+
+
+                            <a href="achatimm.php?numID=<?php echo $info['numID']; ?>"
+                             class="btn btn-secondary btn-block" action="infosobjet.php" >Plus d'informations</a>
                 </div>
         
     <?php  }

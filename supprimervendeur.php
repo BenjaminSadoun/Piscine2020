@@ -22,11 +22,13 @@ session_start();
 
     <?php include("config/navig.php"); ?>
 
+    <div class = "container features">
     <form action = "#" method="POST">   
         <input type="email" class="form-control" placeholder="Son email :" name="email">
         
         <input type="submit" class="btn btn-secondary btn-block" value="Supprimer ce vendeur" name="supprimer" >
     </form> 
+    </div>
 
     <?php
         $email = '';
