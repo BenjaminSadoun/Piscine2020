@@ -66,31 +66,43 @@ session_start();
                         //   $_SESSION['typeVente']=$typeVente;
                         ?>
                         <?php if ($_SESSION['typeVente'] == 0) {
+                        
+                        if(!isset($_SESSION['IDAch']) && !isset($_SESSION['IDVend']))
+                        {
                         ?>
+                            
                             <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
                              type="button" class="#" action="infosobjet.php" method="GET">
                              Encherir sur l'objet</a></button>
                             </div>
-                        <?php } ?>
+                            <?php
+                            } 
+                         } ?>
 
                         <?php if ($_SESSION['typeVente'] == 1) {
+                             if(!isset($_SESSION['IDAch']) && !isset($_SESSION['IDVend']))
+                             {
                         ?>
                             <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>" 
                             type="button" class="#" action="infosobjet.php" method="GET">
                             Proposer une offre</a></button>
                             </div>
-                        <?php } ?>
+                            <?php
+                        } 
+                             } ?>
 
                         <?php if ($_SESSION['typeVente'] == 2) {
+                             if(!isset($_SESSION['IDAch']) && !isset($_SESSION['IDVend']))
+                             {
                         ?>
                             <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
                              type="button" class="#" action="infosobjet.php" method="GET">
                              Acheter cet objet maintenant</a></button>
                             </div>
                             <?php
+                             } 
                             
-                            ?>
-                        <?php } ?>
+                         } ?>
 
                         <?php
                         $database = 'ebayece';

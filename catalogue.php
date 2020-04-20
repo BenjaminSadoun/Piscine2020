@@ -11,7 +11,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Feraille ou Trésor</title>
+    <title>Ebay ECE</title>
 </head>
 
 <body>
@@ -56,7 +56,7 @@ session_start();
                            <p style="text-align:center;font-size:20px;" ><?php echo htmlspecialchars($info['prixInitial']); ?> €<p>
 
 
-                            <a href="ferailletresor.php?numID=<?php echo $info['numID']; ?>"
+                            <a href="catalogue.php?numID=<?php echo $info['numID']; ?>"
                              class="btn btn-secondary btn-block" action="infosobjet.php" >Plus d'informations</a>
 
                 </div>

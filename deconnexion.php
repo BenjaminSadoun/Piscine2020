@@ -26,7 +26,7 @@ session_destroy();
 
     <?php include("config/navig.php"); ?>
 
-    <h1> Vous etes bel et bien deconnecté, on vous en veut un peu pour etre honnete </h1>
+    <h3> Vous êtes bien déconnecté. </h3>
     <br>
     <a href="index.php" class="btn btn-secondary ">Retourner à l'accueil</a>
 

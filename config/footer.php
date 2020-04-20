@@ -20,6 +20,6 @@
                 </p>
             </div>
         </div>
-        <div class="footer-copyright text-center">&copy; 2019 Copyright | Droit d'auteur: ebay.ece.fr</div>
+        <div class="footer-copyright text-center">&copy; 2020 Copyright | Droit d'auteur: ebay.ece.fr</div>
     </div>
 </footer>

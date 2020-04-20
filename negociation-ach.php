@@ -11,7 +11,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Feraille ou Trésor</title>
+    <title>Ebay ECE</title>
 
 </head>
 
@@ -27,7 +27,8 @@ session_start();
     ?>
     <div class="container features">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class ="col-lg-3 col-md-3 col-sm-12"> </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <form action="negociation-back.php" method="POST">
                     <br><br>
                     <h1> Proposez au vendeur un prix </h1>

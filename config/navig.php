@@ -33,7 +33,7 @@
                             <ul class="navbar-nav">
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="achatimm.php">Acheter-le maintenant</a>
-                                    <a class="dropdown-item" href="meilleuroffre.php">Meilleure offre</a>
+                                    <a class="dropdown-item" href="meilleuroffre.php">Meilleures offre</a>
                                     <a class="dropdown-item" href="enchere.php">Enchères</a>
                                 </div>
                             </ul>
@@ -44,7 +44,7 @@
                             <ul class="navbar-nav">
                             <div class="dropdown-menu">
                                     <a class="dropdown-item" href="compteacheteur.php">Compte</a>
-                                    <a class="dropdown-item" href="negociation-ach.php">Negociations en cours</a>
+                                    <a class="dropdown-item" href="negociation-ach.php">Négociations en cours</a>
                             </div>
                             </ul>
                         </li>
@@ -70,7 +70,7 @@
                             <a class="nav-link dropdown-toggle" href="comptevendeur.php" data-toggle="dropdown">Mon Compte Vendeur</a>
                             <ul class="navbar-nav">
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="comptevendeur.php">Ventes recentes</a>
+                                    <a class="dropdown-item" href="comptevendeur.php">Ventes récentes</a>
                                 </div>
                             </ul>
                         </li>
@@ -98,14 +98,7 @@
                                 </div>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="admin.php" data-toggle="dropdown">Mon Compte Admin</a>
-                            <ul class="navbar-nav">
-                                <div class="dropdown-menu">
-                                    <!-- <a class="dropdown-item" href="admin.php">Dernieres modifications</a> -->
-                                </div>
-                            </ul>
-                        </li>
+                        
                         <?php
                     }
                 }

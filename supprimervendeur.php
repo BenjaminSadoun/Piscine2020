@@ -25,7 +25,7 @@ session_start();
     <form action = "#" method="POST">   
         <input type="email" class="form-control" placeholder="Son email :" name="email">
         
-        <input type="submit" class="btn btn-secondary btn-block" value="Supprimer ce vendeur à la base de donnée" name="supprimer" >
+        <input type="submit" class="btn btn-secondary btn-block" value="Supprimer ce vendeur" name="supprimer" >
     </form> 
 
     <?php
