@@ -75,16 +75,13 @@ session_start();
                              
                                 // 
                             ?>
-                            <!-- <form action = "supprimerobjet-back.php" method="POST">  
-                                <div><input type="submit" class="btn btn-secondary btn-block" 
-                                            value="Supprimer l'item" name="supprimer" ></div>
-                            </form> -->
+                            
                             </div>
                            
                         </div> 
         
                     </div>
-                    <!--<br><br><br>-->
+                   
         <?php
       // mysqli_close($db_handle);
             } ?>

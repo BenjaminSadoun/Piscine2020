@@ -57,12 +57,7 @@ session_start();
                                 if (!$db_handle) {
                                     echo 'Connection error: ' . mysqli_connect_error();
                                 }
-                        //     $req = "SELECT typeVente FROM item WHERE numID = $numID ";
-                        //     $result = mysqli_query($db_handle, $req);
-                        //     $type = mysqli_fetch_assoc($result);
-                        //     mysqli_free_result($result);
-                        //     $typeVente = $type['typeVente'];
-                        //   $_SESSION['typeVente']=$typeVente;
+                        
                         ?>
                         <?php if ($_SESSION['typeVente'] == 0) {
                         

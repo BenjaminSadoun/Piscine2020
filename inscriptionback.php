@@ -29,44 +29,7 @@ session_start();
        
         
         
-        // if(isset($_POST['submit'])){
-		
-        //     // check email
-        //     if(empty($_POST['email'])){
-        //         $errors['email'] = 'An email is required';
-        //     } else{
-        //         $email = $_POST['email'];
-        //         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        //             $errors['email'] = 'Email must be a valid email address';
-        //         }
-        //     }
-
-        //     // check prenom
-        //     if(empty($_POST['nom'])){
-        //         $errors['nom'] = 'Vous avez oublié votre nom';
-        //     } else{
-        //         $title = $_POST['nom'];
-        //     }
-
-        //     if(empty($_POST['prenom'])){
-        //         $errors['prenom'] = 'Vous avez oublié votre prénom';
-        //     } else{
-        //         $ingredients = $_POST['prenom'];
-        //     }
-        //     if(array_filter($errors)){
-        //         echo 'errors in form';
-        //     } else {
-        //         // escape sql chars
-        //     $nom = mysqli_real_escape_string($db_handle, $_POST['nom']);
-        //     $prenom = mysqli_real_escape_string($db_handle, $_POST['prenom']);
-        //     $email = mysqli_real_escape_string($db_handle, $_POST['email']);
-        //     $mdp = mysqli_real_escape_string($db_handle, $_POST['mdp']);
-        //     $adresse1 = mysqli_real_escape_string($db_handle, $_POST['adresse1']);
-        //     $adresse2 = mysqli_real_escape_string($db_handle, $_POST['adresse2']);
-        //     $ville = mysqli_real_escape_string($db_handle, $_POST['ville']);
-        //     $codePostal = mysqli_real_escape_string($db_handle, $_POST['codePostal']);
-        //     $pays = mysqli_real_escape_string($db_handle, $_POST['pays']);
-        //     $numeroTel = mysqli_real_escape_string($db_handle, $_POST['numeroTel']);
+        
             
         if(isset($_POST['submit'])){
 

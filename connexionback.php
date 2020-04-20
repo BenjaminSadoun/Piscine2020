@@ -57,8 +57,7 @@
                         $connection = true;
                         $prenom = $data['prenom'];
                         $id = $data['IDAch'];
-
-                        // if($_POST['checkbox']=='resterconnecte')                  
+                 
                         $_SESSION['nom'] = $data['nom'];
                         $_SESSION['prenom'] = $data['prenom'];
                         $_SESSION['email'] = $identifiant;
@@ -79,7 +78,8 @@
                     echo "<p style = 'font-size:30px;'> Bienvenue $prenom ! </p>";
                 ?>
                 
-                <a href="index.php" class="btn btn-secondary ">Retourner à l'accueil</a>                <?php
+                <a href="index.php" class="btn btn-secondary ">Retourner à l'accueil</a>          
+            <?php
                 }
             } 
             if ($_POST['connexion']=='vendeur') {

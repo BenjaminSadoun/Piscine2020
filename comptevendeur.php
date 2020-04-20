@@ -82,12 +82,6 @@ session_start();
                             ?> <?php } ?>
 
 
-                    <!--   <p class="text small">
-                                                <a> Charger une photo</a>
-                                                <div class="divider">
-                                                        <input href = "#"  type="file">
-                                                        </div> -->
-
 
                     </div>
             </div>

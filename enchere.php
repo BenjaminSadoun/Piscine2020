@@ -92,32 +92,14 @@ session_start();
         echo '<script language="Javascript"> document.location.replace("infosobjet.php"); </script>';
     ?>
 
-        <!-- <input type="button" value="rafraichir" onclick="window.location.href='infosobjet.php'" /> -->
+        
     <?php
 
     }
     ?>
     <br><br><br>
 
-    <!-- <div class="container features">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="card z-depth-0">
-                    <div class="card-content center">
-                        <h6><?php echo htmlspecialchars($_SESSION['nom']); ?></h6>
-                        <div><?php echo htmlspecialchars($_SESSION['description']); ?></div>
-                        <div><?php echo "<div id='img_div'>";
-                                echo "<img  class='img-fluid' src='img/imgitem/" . $_SESSION['vignette'] . "' >";
-                                echo "</div>";
-                                ?>
-                        </div>
-                        <div><?php echo htmlspecialchars($_SESSION['prixInitial']); ?></div>
-                    </div>
-                    <div class="card-action right-align"></div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+   
 </body>
 
 <?php include("config/footer.php"); ?>

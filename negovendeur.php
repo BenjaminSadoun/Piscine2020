@@ -34,27 +34,7 @@ session_start();
         echo 'Connection error: ' . mysqli_connect_error();
     }
     
-    // if (isset($_POST['soumettreVend'])) {
-    //     if (empty($_POST['contreOffre'])) {
-    //         $errors['contreOffre'] = 'Veuillez proposer un prix';
-    //     } else {
-    //         $contreOffre = $_POST['contreOffre'];
-    //     }
-
-    //     if (array_filter($errors)) {
-    //         echo 'errors in form';
-    //     } else {
-    //         $offre = mysqli_real_escape_string($db_handle, $_POST['contreOffre']);
-
-    //         $sql = "UPDATE transaction SET offre = 0, contreOffre = $contreOffre, compteur = 1";
-    //         if (mysqli_query($db_handle, $sql)) {
-    //             // success
-    //             header('Location: index.php');
-    //         } else {
-    //             echo 'query error: ' . mysqli_error($db_handle);
-    //         }
-    //     }
-    // }
+    
 
    
 

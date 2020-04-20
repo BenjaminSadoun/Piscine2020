@@ -37,15 +37,7 @@ session_start();
     $IDVend = isset($_SESSION["IDVend"]) ? $_SESSION["IDVend"] : "";
   
 
-    // $sql = "SELECT compteur, numID, IDTrans, offre, contreOffre FROM transaction WHERE IDVend = $IDVend";
-    // $res = mysqli_query($db_handle, $sql);
-    // $infos = mysqli_fetch_assoc($res);
-    // mysqli_free_result($res);
-    // $IDTrans = $infos ['IDTrans'];
-    // $offre = $infos['offre'];
-    // $contreOffre = $infos['contreOffre'];
-    // $compteur = $infos['compteur'];
-
+    
     if (isset($_SESSION['IDAch'])){
             $sqlAch = "SELECT compteur, numID, IDTrans, offre, contreOffre FROM transaction WHERE IDAch = $IDAch";
             $resAch = mysqli_query($db_handle, $sqlAch);

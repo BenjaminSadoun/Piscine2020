@@ -56,18 +56,12 @@ session_start();
                 $photoProfil = $_FILES['photoProfil']['name'];
                 $fondEcran = $_FILES['fondEcran']['name'];
                 
-                // $photoProfil = mysqli_real_escape_string($db_handle, $_POST['photoProfil']);
-                // $fondEcran = mysqli_real_escape_string($db_handle, $_POST['fondEcran']);
-
-            // create sql
-           
-            // $sql = "INSERT INTO vendeur (IDAdm,nom,prenom,email,mdp,photoProfil,fondEcran)
-            // VALUES (1, '$nom','$prenom','$email','$mdp','$photoProfil', '$fondEcran')";
+                
 
             $sql = "UPDATE vendeur SET photoProfil = '$photoProfil', fondEcran = '$fondEcran'
              WHERE email = '$email' ";
             
-            // save to db and check
+            
             if(mysqli_query($db_handle, $sql)){
                 // success
                 // header('Location: index.php');

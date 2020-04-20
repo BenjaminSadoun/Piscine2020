@@ -43,16 +43,14 @@ session_start();
             if(array_filter($errors)){
                 echo 'errors in form';
             } else {
-                // escape sql chars
-            //$numID = $_SESSION['numID'];
-            // $nommedia = $_FILES['nommedia']['name'];
+            
             $offre = mysqli_real_escape_string($db_handle, $_POST['offre']);
 
-            // create sql
+            
             $sql = "UPDATE transaction SET offre = $offre WHERE IDAch = $IDAch and numID = $numID";
 
-            if(mysqli_query($db_handle, $sql)){ //AND mysqli_query($db_handle, $sql2)
-                // success
+            if(mysqli_query($db_handle, $sql)){ 
+                
                 // header('Location: index.php');
             } else {
                 echo 'query error: '. mysqli_error($db_handle);

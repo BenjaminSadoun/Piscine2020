@@ -32,8 +32,6 @@ session_start();
     ?>
 
 
-    <!------ Include the above in your HEAD tag ---------->
-
     <div class="container features">
 
 

@@ -55,36 +55,7 @@ session_start();
             <br><br>
             <input type="submit" class="btn btn-secondary btn-block" value="Continuer" name="submit" >
 
-            <!--<?php
-            if($_POST['inscription'] == 'acheteur')
-                {
-            ?>
-            <input type="text" class="form-control" placeholder="Votre nom :" name="nom">
-            <input type="text" class="form-control" placeholder="Votre prénom :" name="prenom">
-            <input type="text" class="form-control" placeholder="Votre email :" name="email">
-            <input type="text" class="form-control" placeholder="Votre mot de passe :" name="mdp">
-            <input type="text" class="form-control" placeholder="Votre adresse principale:" name="adresse1">
-            <input type="text" class="form-control" placeholder="Votre adresse secondaire:" name="adresse2">
-            <input type="text" class="form-control" placeholder="Votre ville :" name="ville">
-            <input type="text" class="form-control" placeholder="Votre code postal :" name="codePostal">
-            <input type="text" class="form-control" placeholder="Votre pays :" name="pays">
-            <input type="text" class="form-control" placeholder="Votre numero de téléphone :" name="numeroTel">
-            
-            <input type="submit" class="btn btn-secondary btn-block" value="S'inscrire" name="submit" >
-            <?php
-                }
-            ?>
-            <?php
-            if($_POST['inscription'] == 'vendeur')
-                {
-            ?>
-            <input type="text" class="form-control" placeholder="Votre nom :" name="nom">
-            <input type="text" class="form-control" placeholder="Votre prénom :" name="prenom">
-            <input type="text" class="form-control" placeholder="Votre email :" name="email">
-            <input type="text" class="form-control" placeholder="Votre mot de passe :" name="mdp">
-            <?php
-            }
-            ?>-->
+           
 
             
         </form>

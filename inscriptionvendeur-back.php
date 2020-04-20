@@ -70,12 +70,7 @@ session_start();
              $prenom = mysqli_real_escape_string($db_handle, $_POST['prenom']);
              $email = mysqli_real_escape_string($db_handle, $_POST['email']);
              $mdp = mysqli_real_escape_string($db_handle, $_POST['mdp']);
-            //  $adresse1 = mysqli_real_escape_string($db_handle, $_POST['adresse1']);
-            //  $adresse2 = mysqli_real_escape_string($db_handle, $_POST['adresse2']);
-            //  $ville = mysqli_real_escape_string($db_handle, $_POST['ville']);
-            //  $codePostal = mysqli_real_escape_string($db_handle, $_POST['codePostal']);
-            //  $pays = mysqli_real_escape_string($db_handle, $_POST['pays']);
-            //  $numeroTel = mysqli_real_escape_string($db_handle, $_POST['numeroTel']);
+            
             
              $sql = "INSERT INTO vendeur(IDAdm,nom,prenom,email,mdp,fondEcran, photoProfil)
              VALUES(0,'$nom','$prenom','$email','$mdp','','')";
