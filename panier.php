@@ -32,6 +32,7 @@ session_start();
     $ids = mysqli_fetch_all($res, MYSQLI_ASSOC);
     mysqli_free_result($res);
     $somme = 0;
+  
 
     ?>
     <div class="container features">
@@ -47,7 +48,17 @@ session_start();
                             $res2 = mysqli_query($db_handle, $sql2);
                             $items = mysqli_fetch_all($res2, MYSQLI_ASSOC);
                             mysqli_free_result($res2);
+
+                            $req = "SELECT typeVente FROM item WHERE numID = $numID ";
+                            $result = mysqli_query($db_handle, $req);
+                            $type = mysqli_fetch_assoc($result);
+                            mysqli_free_result($result);
+                            $typeVente = $type['typeVente'];
+                            $_SESSION['typeVente']=$typeVente;
+                          
+
                             foreach ($items as $item) { ?>
+                               
                                 <h6><?php echo htmlspecialchars($item['nom']); ?></h6>
 
                                 <div><?php echo "<div id='img_div'>";
@@ -83,12 +94,14 @@ session_start();
                 }
             }
             $_SESSION['somme'] = $somme;
+            if ($_SESSION['somme']!==0){
             ?>
             
             <div><button><a href="panier.php?numID=<?php echo $numID; ?>" type="button" class="#" action="#" 
                 method="GET">Passer à la commande</a></button>
             <div><?php echo 'Total :' . $somme . '€' ?></div>
             <?php
+            }
             if (isset($_GET["numID"])) {
                 echo '<script language="Javascript"> document.location.replace("achat.php"); </script>';
             }

@@ -37,8 +37,9 @@ session_start();
                         <?php } ?>
 
                         <?php if ($_SESSION['typeVente'] == 1) {
-                        ?>
-                            <div>meilleur offre</div>
+
+                            echo 'Vous avez conclu une négociation.';?>
+                          
                         <?php } ?>
 
                         <?php if ($_SESSION['typeVente'] == 2) {

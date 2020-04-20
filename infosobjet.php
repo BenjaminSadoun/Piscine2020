@@ -42,6 +42,20 @@ session_start();
                         <?php $prixInitial = $_SESSION['prixInitial']; ?>
                         <?php $IDAch = $_SESSION['IDAch']; ?>
                         <?php $IDVend = $_SESSION['IDVend']; ?>
+                        <?php 
+                                $database = 'ebayece';
+                                $db_handle = mysqli_connect('localhost', 'root', '', $database);
+                                // check connection
+                                if (!$db_handle) {
+                                    echo 'Connection error: ' . mysqli_connect_error();
+                                }
+                            $req = "SELECT typeVente FROM item WHERE numID = $numID ";
+                            $result = mysqli_query($db_handle, $req);
+                            $type = mysqli_fetch_assoc($result);
+                            mysqli_free_result($result);
+                            $typeVente = $type['typeVente'];
+                          $_SESSION['typeVente']=$typeVente;
+                        ?>
                         <?php if ($_SESSION['typeVente'] == 0) {
                         ?>
                             <div><button><a href="infosobjet.php?numID=<?php echo $numID; ?>"
@@ -78,8 +92,8 @@ session_start();
                         if (isset($_GET["numID"])) {
                             if( $_SESSION['typeVente'] == 0){
                             $sql = "INSERT INTO transaction(IDAch,IDVend,numID, 
-                                                    enchere, meilleureOffre, achatImmediat,prixPropose)
-                            VALUES('$IDAch','$IDVend','$numID',1,0,0,)";
+                                                    enchere, meilleureOffre, achatImmediat, offre, contreOffre, compteur)
+                            VALUES('$IDAch','$IDVend','$numID',1,0,0,$prixInitial,$prixInitial,0)";
                             if (mysqli_query($db_handle, $sql)) { //AND mysqli_query($db_handle, $sql2)
                                 // success
                                 // header('Location: index.php');
@@ -90,9 +104,10 @@ session_start();
                             }
 
                             if( $_SESSION['typeVente'] == 1){
+
                             $sql = "INSERT INTO transaction(IDAch,IDVend,numID, 
-                                                    enchere, meilleureOffre, achatImmediat,prixPropose)
-                            VALUES('$IDAch','$IDVend','$numID',0,1,0,$prixInitial)";
+                                                    enchere, meilleureOffre, achatImmediat,offre, contreOffre, compteur)
+                            VALUES('$IDAch','$IDVend','$numID',0,1,0,$prixInitial,$prixInitial,0)";
                             if (mysqli_query($db_handle, $sql)) { //AND mysqli_query($db_handle, $sql2)
                                 // success
                                 // header('Location: index.php');
@@ -104,8 +119,8 @@ session_start();
 
                             if( $_SESSION['typeVente'] == 2){
                             $sql = "INSERT INTO transaction(IDAch,IDVend,numID, 
-                                                    enchere, meilleureOffre, achatImmediat,prixPropose)
-                            VALUES('$IDAch','$IDVend','$numID',0,0,1,0,$prixInitial)";
+                                                    enchere, meilleureOffre, achatImmediat,offre, contreOffre, compteur )
+                            VALUES('$IDAch','$IDVend','$numID',0,0,1,$prixInitial,$prixInitial,0)";
                             if (mysqli_query($db_handle, $sql)) { //AND mysqli_query($db_handle, $sql2)
                                 // success
                                 // header('Location: index.php');

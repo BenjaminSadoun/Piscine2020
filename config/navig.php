@@ -44,6 +44,7 @@
                             <ul class="navbar-nav">
                             <div class="dropdown-menu">
                                     <a class="dropdown-item" href="compteacheteur.php">Compte</a>
+                                    <a class="dropdown-item" href="negociation-ach.php">Negociations en cours</a>
                             </div>
                             </ul>
                         </li>
@@ -60,7 +61,7 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="vendre.php">Items en ventes</a>
                                     <a class="dropdown-item" href="ajouterobjet.php">Ajouter un objet</a>
-                                    <a class="dropdown-item" href="vendre.php">Voir mes meilleures offres</a>
+                                    <a class="dropdown-item" href="negociation-vend.php">Voir mes meilleures offres</a>
             
                                 </div>
                             </ul>

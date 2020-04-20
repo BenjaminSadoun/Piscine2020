@@ -51,7 +51,7 @@ session_start();
             <div class="col-sm-4" style="margin-top:-16px;margin-left:-120px;">
 
                 <div class ="row">
-                    <a href="catalogue.php" class="btn btn-secondary btn-block">Accéder à mon panier</a>
+                    <a href="panier.php" class="btn btn-secondary btn-block">Accéder à mon panier</a>
                 </div>
                 <div  class ="row">
                     <a href="infosbancaires.php" class="btn btn-secondary btn-block">Accéder à mes informations bancaires</a>

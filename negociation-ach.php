@@ -31,11 +31,27 @@ session_start();
                 <form action="negociation-back.php" method="POST">
                     <br><br>
                     <h1> Proposez au vendeur un prix </h1>
-                    <input type="text" id="prixprop" class="form-control" name="prixPropose" placeholder="Prix propose">
-                    <input type="submit" class="btn btn-secondary btn-block" value="Continuer" name="soumettreAch">
-                    <?php
-                    if ($prixProp)
+                    <?php   $database = 'ebayece';
+                            $db_handle = mysqli_connect('localhost', 'root', '', $database);
+                            // check connection
+                            if (!$db_handle) {
+                                echo 'Connection error: ' . mysqli_connect_error();
+                            }
+
+                             $IDAch = $_SESSION['IDAch'];
+                            $sql = "SELECT contreOffre , compteur FROM transaction WHERE IDAch = $IDAch  ";
+                            $res = mysqli_query($db_handle, $sql);
+                            $infos = mysqli_fetch_assoc($res);
+                            mysqli_free_result($res);
+                            
+                            echo 'Le vendeur propose : '.$infos['contreOffre'].'.';
+                            echo 'Vous avez fait '.$infos['compteur']. ' offre(s). Au bout de 5 offres, la négociation s\'arrête.'
                     ?>
+                    <input type="text" id="prixprop" class="form-control" name="offre" placeholder="Prix propose">
+                    <input type="submit" class="btn btn-secondary btn-block" value="Continuer" name="soumettreAch">
+                    <input type="submit" class="btn btn-secondary btn-block" value="Valider l'offre" name="validerOffre" >
+                    <input type="submit" class="btn btn-secondary btn-block" value="Arrêter la négociation" name="arreterOffre">
+
                 </form>
                 <div class="card-action right-align"></div>
             </div>

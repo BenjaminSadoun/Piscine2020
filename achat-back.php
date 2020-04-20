@@ -62,7 +62,7 @@ session_start();
             }
             if ($transaction == false) {
                 if ($solde < $prixInitial) {
-                    echo "Désolé, mais il semble que nous n'arrivions à effectuer la transaction...";
+                    echo "Désolé, mais il semble que nous n'arrivions pas à effectuer la transaction...";
                 }else{
                 echo "Il y a eu un problème de vérification de votre carte!
                  Veuillez vérifier vos coordonnées bancaires.";
