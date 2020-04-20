@@ -28,7 +28,7 @@ session_destroy();
 
     <h1> Vous etes bel et bien deconnecté, on vous en veut un peu pour etre honnete </h1>
     <br>
-    <a href="index.php">Retourner à l'accueil</a>
+    <a href="index.php" class="btn btn-secondary ">Retourner à l'accueil</a>
 
     <?php include("config/footer.php"); ?>
     

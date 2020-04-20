@@ -2,8 +2,8 @@ body {
     padding: 0px;
     margin: 0px;
     background-color:      #fff;
-
-
+  
+    
 }
 
 .btn:hover {
@@ -11,16 +11,17 @@ body {
   }
 
 .navbar {
-    /* /barre de navigation dégradé orange/ */
+    /*barre de navigation dégradé orange*/
     background: linear-gradient(0.25turn, #A40606, #D98324);
 }
 
 .nav-link {
     margin-right: 1em;
+    color: #fff;
 }
 
 .nav-link, .navbar-brand {
-    color: #FFEFD5;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -31,16 +32,16 @@ body {
 #header {
     padding: 20px;
     text-align: center;
-    color:  #FFEFD5;
-
+    color:  #fff;
+   
     background: linear-gradient(0.25turn, #A40606, #D98324);
 }
 
 .header {
 
     background: linear-gradient(0.25turn, #A40606, #D98324);
-    color:  #FFEFD5;
-
+    color:  #fff;
+    
 }
 
 .navbar-collapse {
@@ -55,16 +56,13 @@ body {
 
 .features img {
     height:300px;
-
-    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    margin-bottom: 16px;
+    
+   
 }
 
 .page-footer {
     background:linear-gradient(0.25turn, #A40606, #D98324);
-    color: #FFEFD5;
+    color: #fff;
     padding: 60px 0 30px;
 
     bottom:0;
@@ -76,17 +74,17 @@ body {
     opacity:1;
     background:linear-gradient(0.25turn, #A40606, #D98324);
     border: 0px solid #A44200;
-    color: #FFEFD5;
+    color: #fff;
     margin-top: 20px;
-
+    
 }
 img:hover {
     opacity:0.7;
 }
 img {
     opacity:1;
-
-
+  
+    
 }
 
 
@@ -111,5 +109,5 @@ Width: 30%;
     background-size: cover;
     background-position: center;
     opacity: 0.3;
-
+    
 }

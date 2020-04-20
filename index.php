@@ -17,16 +17,22 @@ session_start();
 <body>
 
     <div id="header">
-        <h1 id="h1">Ebay ECE</h1>
-        <h2 id="h2">La vente en ligne pour la communauté ECE Paris</h2>
+        <h1 >Ebay ECE</h1>
+        <h2 >La vente en ligne pour la communauté ECE Paris</h2>
     </div>
 
     <?php include("config/navig.php"); ?>
+    <div  class="container features">
+    <img style="opacity:1;display: block;margin-left: auto;
+    margin-right: auto ;" src="img/logoeECE.png">
+    <div class="overlay">
+        <img  width="1000" style="transform:scale(2);"; » src="img/index.jpg">
+    </div>
+    </div>
 
-   
-        <div class="container features">
-        Activité consistant dans l'achat, la vente, l'échange de marchandises, de denrées, de valeurs, dans la vente de services ; métier de celui qui achète des objets pour les revendre : Faire le commerce de gros, de détail. Marine, navire, port de commerce.    
-        </div>
+
+
+
 
 
     <?php include("config/footer.php"); ?>

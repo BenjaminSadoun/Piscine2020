@@ -91,6 +91,19 @@ session_start();
 
             }
         }
+        $erreur = "";
+        if ($nom == "") {
+            $erreur .= "Nom est vide. <br>";
+        }
+        if ($prenom == "") {
+            $erreur .= "Age est vide. <br>";
+        }
+        if ($email == "") {
+            $erreur .= "Email est vide. <br>";
+        }
+        if ($mdp == "") {
+            $erreur .= "Mdp est vide. <br>";
+        }
 
     ?>
 

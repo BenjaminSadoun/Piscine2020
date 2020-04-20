@@ -92,7 +92,37 @@ session_start();
 
             }
         }
-
+        $erreur = "";
+        if ($nom == "") {
+            $erreur .= "Nom est vide. <br>";
+        }
+        if ($prenom == "") {
+            $erreur .= "Age est vide. <br>";
+        }
+        if ($email == "") {
+            $erreur .= "Email est vide. <br>";
+        }
+        if ($mdp == "") {
+            $erreur .= "Mdp est vide. <br>";
+        }
+        if ($ville == "") {
+            $erreur .= "Ville est vide. <br>";
+        }
+        if ($codePostal == "") {
+            $erreur .= "Code Postal est vide. <br>";
+        }
+        if ($pays == "") {
+            $erreur .= "Pays est vide. <br>";
+        }
+        if ($numeroTel == "") {
+            $erreur .= "NuméroTel est vide. <br>";
+        }
+    
+        if ($erreur == "") {
+            echo "Formulaire valide";
+        } else {
+            echo "Erreur : $erreur";
+        }
     ?>
 
     <?php include("config/footer.php"); ?>

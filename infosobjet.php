@@ -40,9 +40,18 @@ session_start();
                         <div><?php echo htmlspecialchars($_SESSION['prixInitial']); ?></div>
                         <?php $numID = $_SESSION['numID']; ?>
                         <?php $prixInitial = $_SESSION['prixInitial']; ?>
-                        <?php $IDAch = $_SESSION['IDAch']; ?>
+                        <?php $IDAch = isset($_SESSION['IDAch']) ? $_SESSION['IDAch']:""?>
                         <?php $IDVend = $_SESSION['IDVend']; ?>
+
+                        
                         <?php 
+
+                        if(!isset($_SESSION['IDAch']) && !isset($_SESSION['IDVend']))
+                        {
+                            ?>
+                            <p> Vous devez vous connecter pour acceder aux informations de l'objet </p>
+                            <?php
+                        } 
                                 $database = 'ebayece';
                                 $db_handle = mysqli_connect('localhost', 'root', '', $database);
                                 // check connection

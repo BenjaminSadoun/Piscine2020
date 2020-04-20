@@ -46,10 +46,10 @@ session_start();
 
         <div class="row">
 
-            <div class="col-sm-4">
+            <div class="col" style="margin-top:-16px;">
 
                 <div>
-                    <a href="catalogue.php"class="btn btn-secondary btn-block">Accéder à mes ventes</a>
+                    <a href="panier.php"class="btn btn-secondary btn-block">Accéder à mes ventes</a>
                 </div>
                 <div>
                     <a href="modifphoto.php" class="btn btn-secondary btn-block">Modifier mes photos</a>
@@ -62,14 +62,14 @@ session_start();
                 </div>
 
             </div>
-            <div class="col-sm-4">
+            <div class="col" style="margin-left:120px;">
                 <h3><?php echo  $_SESSION['prenom'], ' ', $_SESSION['nom']; ?></h3>
                 <div><?php echo $_SESSION['email']; ?></div>
             </div>
 
 
 
-            <div class="col-sm-4">
+            <div class="col">
                 <?php if ($_SESSION['photoProfil'] == '') {
                     echo "<div id='img_div'>";
                     echo "<img  class='img-fluid' src='img/account.png' ";
@@ -77,7 +77,7 @@ session_start();
                 } else {
                 ?>
                     <div><?php
-                            echo "<img  width='300px'; height='200'; src='img/" . $_SESSION['photoProfil'] . "' >";
+                            echo "<img   width='250px'; height='150px'; src='img/" . $_SESSION['photoProfil'] . "' >";
                             echo "</div>";
                             ?> <?php } ?>
 

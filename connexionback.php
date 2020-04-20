@@ -22,6 +22,7 @@
     </div>
 
     <?php include("config/navig.php"); ?>
+    <div  class='container features'>
 
     <nav id="sayHi">
         <?php
@@ -75,11 +76,10 @@
                 if ($connection == false) {
                     echo "Il y a eu un problème de connexion à votre compte acheteur! Vérifiez votre identifiant et votre mot de passe";
                 } else {
-                    echo "Bonjour " . $prenom . "!";
+                    echo "<p style = 'font-size:30px;'> Bienvenue $prenom ! </p>";
                 ?>
-                <br>
-                <a href="index.php">Retourner à l'accueil</a>
-                <?php
+                
+                <a href="index.php" class="btn btn-secondary ">Retourner à l'accueil</a>                <?php
                 }
             } 
             if ($_POST['connexion']=='vendeur') {
@@ -106,11 +106,10 @@
                 if ($connection == false) {
                     echo "Il y a eu un problème de connexion à votre compte vendeur! Vérifiez votre identifiant et votre mot de passe";
                 } else {
-                    echo "Bonjour " . $prenom . "!";
+                    echo "<p style = 'font-size:30px;'> Bienvenue $prenom ! </p>";
                 ?>
-                <br>
-                <a href="index.php">Retourner à l'accueil</a>
-                <?php
+                
+                <a href="index.php" class="btn btn-secondary ">Retourner à l'accueil</a>                <?php
                 }
             }
             if ($_POST['connexion']=='admin') {
@@ -132,10 +131,11 @@
                 if ($connection == false) {
                     echo "Il y a eu un problème de connexion à votre compte admin! Vérifiez votre identifiant et votre mot de passe";
                 } else {
-                    echo "Bonjour " . $prenom . "!";
+                    echo "<p style = 'font-size:30px;'> Bienvenue $prenom ! </p>";
                     ?>
-                    <br>
-                    <a href="index.php">Retourner à l'accueil</a>
+                    
+                     <a href="index.php" class="btn btn-secondary ">Retourner à l'accueil</a>
+
                     <?php
                 }
             } 
@@ -145,6 +145,8 @@
         mysqli_close($db_handle);
         ?>
     </nav>
+ 
+    </div>
 
     <?php include("config/footer.php"); ?>
 
